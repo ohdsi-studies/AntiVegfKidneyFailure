@@ -208,7 +208,7 @@ The overall objective of the proposal is to estimate the comparative risk of kid
 # Research Methods
 
 ## Study Design
-
+This will be a retrospective study of patients with blinding diseases (DR/DME, AMD, and VO) comparing the risk of kidney failure after exposure to ranibizumab relative to aflibercept, ranibizumab to bevacizumab, and bevacizumab to aflibercept. Data sources will be administrative claims or electronic health record (EHR) data across the OHDSI network.
 
 ## Data Sources
 
