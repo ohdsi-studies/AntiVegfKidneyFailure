@@ -1,5 +1,5 @@
 ---
-title: "| RESEARCH PROTOCOL\n| \n| Study Repo Template \n"
+title: "| RESEARCH PROTOCOL\n| \n| Estimating the comparative risk of kidney failure associated with intravitreal anti-vascular endothelial growth factor exposure in patients with blinding diseases \n"
 fontsize: 12pt
 geometry: margin=1in
 output:
@@ -79,8 +79,23 @@ latex_table_font_size <- 8
 # List of Abbreviations
 
 ```{r abbreviations, echo=FALSE}
-abbreviations <- readr::read_delim(col_names = FALSE, delim = ";", trim_ws = TRUE, file = "
-  CDM; Common data model
+abbreviations <- readr::read_delim(col_names = FALSE, delim = ",", trim_ws = TRUE, file = "
+Anti-VEGF, anti-vascular endothelial growth factor 
+DME, diabetic macular edema 
+DR, diabetic retinopathy 
+AMD, age-related macular degeneration 
+VO, vein occlusion 
+CKD, chronic kidney disease 
+ICD, International Classification of Diseases 
+CPT, Current Procedural Terminology 
+OHDSI, Observational Health Data Sciences and Informatics 
+OMOP, Observational Medical Outcomes Partnership 
+CDM, common data model 
+PS, propensity score 
+EHR, electronic health record 
+IRB, Institutional Review Board 
+JHM, Johns Hopkins Medicine 
+ARVO, Association for Research in Vision and Ophthalmology 
 ")
 
 tab <- kable(abbreviations, col.names = NULL, linesep = "", booktabs = TRUE)
