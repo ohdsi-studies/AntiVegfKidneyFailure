@@ -117,7 +117,7 @@ if (knitr::is_latex_output()) {
 ```{r parties, echo=FALSE}
 parties <- readr::read_delim(col_names = TRUE, delim = ";", trim_ws = TRUE, file = "
   Investigator; Institution/Affiliation
-  Joe Bruin *; Department of Biostatistics, University of California, Los Angeles, Los Angeles, CA, USA
+  Cindy Cai, MD *; Wilmer Eye Institute, Johns Hopkins Hospital, Baltimore, MD, USA
 ")
 
 tab <- kable(parties, booktabs = TRUE, linesep = "") %>%
@@ -142,21 +142,13 @@ This study is undertaken within Observational Health Data Sciences and Informati
 
 # Abstract
 
-**Background and Significance**: 
+Background: The potential adverse kidney effects of the commonly used intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications are poorly understood.
+Purpose: To estimate the risk of kidney failure after intravitreal anti-VEGF medications across the Observational Health Data Sciences and Informatics (OHDSI) network, comparing ranibizumab, aflibercept, and bevacizumab.
+Design: Retrospective analysis of administrative claims and electronic health record (EHR) data in the OHDSI network.
+Subjects: Patients with blinding diseases including diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO) who receive ≥3 monthly anti-VEGF will be included. Patients with pre-existing kidney failure will be excluded.
+Methods: Patients receiving ranibizumab will be compared to propensity score matched patients receiving aflibercept, and patients receiving bevacizumab. Propensity score models will be constructed on baseline characteristics such as demographics (age, sex, race/ethnicity), comorbidities (Charlson Comorbidity Index), and receipt of any nephrotoxic medications during the observation window. Cox models will be used to compare the time to kidney failure between patients who receive ranibizumab with patients who receive aflibercept, ranibizumab with bevacizumab, and bevacizumab with aflibercept.
+Conclusions: Knowing the relative risk for kidney failure between the three commonly used anti-VEGF medications will allow ophthalmologists to select safer treatments.
 
-**Study Aims**: 
-
-**Study Description**: 
-
-* **Population**: 
-
-* **Comparators**:
-  
-* **Outcomes**:
-  
-* **Design**: 
-
-* **Timeframe**: 
 
 \clearpage
 
@@ -180,7 +172,16 @@ if (knitr::is_latex_output()) {
 
 ```{r dates, echo=FALSE}
 dates <- readr::read_delim(col_names = TRUE, delim = ";", trim_ws = TRUE, file = "
-  Milestone; Planned / actual date
+•	Identify data partners
+•	Data partners to share data diagnostics results
+•	Complete candidate phenotypes
+•	Data partners to share phenotype diagnostics results
+•	Finalize analytic package
+•	Data partners to run analytic package
+•	Data partners to share study diagnostic results
+•	Finalize results from data partners
+•	Manuscript drafting and writing
+•	Submit abstract: OHDSI Global Symposium (May 2023), ARVO (Jan 2024)
 ")
 
 tab <- kable(dates, booktabs = TRUE, linesep = "")
@@ -193,14 +194,21 @@ if (knitr::is_latex_output()) {
 ```
 
 # Rationale and Background
+Intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications have revolutionized the treatment of blinding diseases.1,2 Nearly 20 million intravitreal injections were given globally in 2016 to treat conditions such as diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO).1 When given systemically, anti-VEGF medications have adverse kidney effects (e.g., proteinuria, acute kidney injury).3–5 Patients at high risk for chronic kidney disease (CKD), for example, those ≥60 years and those with diabetes, may be preferentially harmed by the adverse kidney effects of intravitreal anti-VEGF.6 CKD can progress to kidney failure, which is a major source of morbidity and mortality for the patient and is a financial burden to society.6,7
+
+When anti-VEGF medications are given intravitreally, there is systemic absorption of the drug that is greatest with bevacizumb and aflibercept and lowest with ranibizumab.8,9 However, evidence about the subsequent kidney effect is conflicting. Several case reports document kidney damage after intravitreal anti-VEGF.10–12 On the other hand, retrospective cohort studies have not identified treatment-associated declines in kidney function, or estimated glomerular filtration rate (eGFR).13,14 A secondary analysis from a randomized trial also did not show differences in rates of kidney damage.15 However, these studies were either limited to a single institution, had small sample sizes (<600 patients), only included patients without CKD, and did not evaluate the severe phenotype of kidney failure. To resolve this controversy, a comprehensive study is needed to evaluate the kidney effects of intravitreal anti-VEGF. In populations at high risk for CKD, the treating ophthalmologist can choose alternate forms of therapy (e.g., focal laser for DME), or the intravitreal anti-VEGF with the least systemic absorption (e.g., ranibizumab).16–18
+
 
 # Study Objectives
+The overall objective of the proposal is to estimate the comparative risk of kidney failure associated with intravitreal anti-vascular endothelial growth factor exposure in patients with blinding diseases. The rationale is that knowing the comparative risk for kidney failure among the three commonly used anti-VEGF medications will allow the ophthalmologist to select the safest treatments, particularly for populations at high risk for adverse kidney effects. To address our hypothesis, we propose the following specific aims.
+1.	Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to ranibizumab increase the risk of kidney failure, relative to aflibercept?
+2.	Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to ranibizumab increase the risk of kidney failure, relative to bevacizumab?
+3.	Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to bevacizumab increase the risk of kidney failure, relative to aflibercept?
 
 # Research Methods
 
 ## Study Design
-
-This study uses `CohortMethod` [@Schuemie2020-fa].
+This will be a retrospective study of patients with blinding diseases (DR/DME, AMD, and VO) comparing the risk of kidney failure after exposure to ranibizumab relative to aflibercept, ranibizumab to bevacizumab, and bevacizumab to aflibercept. Data sources will be administrative claims or electronic health record (EHR) data across the OHDSI network.
 
 ## Data Sources
 
@@ -237,10 +245,10 @@ This study uses `CohortMethod` [@Schuemie2020-fa].
 # Exposure Cohort Definitions
 
 ```{r appendix,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
-source("https://raw.githubusercontent.com/ohdsi-studies/LegendT2dm/master/R/PrettyOutput.R")
+source("")
 
-printCohortDefinitionFromNameAndJson(name = "Template Cohort (New-users of DDP4 inhibitors)",
-                                     json = SqlRender::readSql("templateCohort.json"),
+printCohortDefinitionFromNameAndJson(name = "",
+                                     json = SqlRender::readSql(""),
                                      withConcepts = TRUE)
 ```
 
