@@ -1,0 +1,1058 @@
+{
+  "items": [
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "115f8246-b87c-49aa-b411-e67afecdced9",
+        "CONCEPT_ID": 728201,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "47517717-5a1e-4e42-a74e-1940eea862ca",
+        "CONCEPT_ID": 1169915,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "HCPCS",
+        "CONCEPT_CODE": "C9233",
+        "CONCEPT_ID": 2616360,
+        "CONCEPT_NAME": "Injection, ranibizumab, 0.5 mg",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "HCPCS"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "HCPCS",
+        "CONCEPT_CODE": "J2778",
+        "CONCEPT_ID": 2718560,
+        "CONCEPT_NAME": "Injection, ranibizumab, 0.1 mg",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "HCPCS"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "424204000",
+        "CONCEPT_ID": 3182682,
+        "CONCEPT_NAME": "Ranibizumab 10mg/mL solution for intravitreal injection 0.05mL vial",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "Nebraska Lexicon"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Substance",
+        "CONCEPT_CODE": "422456007",
+        "CONCEPT_ID": 3191676,
+        "CONCEPT_NAME": "Ranibizumab",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "Nebraska Lexicon"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "425256004",
+        "CONCEPT_ID": 3207684,
+        "CONCEPT_NAME": "Ranibizumab product",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "Nebraska Lexicon"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Procedure",
+        "CONCEPT_CODE": "706911000000102",
+        "CONCEPT_ID": 3542439,
+        "CONCEPT_NAME": "Injection of Ranibizumab into vitreous body",
+        "DOMAIN_ID": "Procedure",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "8971701000001102",
+        "CONCEPT_ID": 3623052,
+        "CONCEPT_NAME": "RANIBIZUMAB",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "9007701000001107",
+        "CONCEPT_ID": 3623406,
+        "CONCEPT_NAME": "RANIBIZUMAB 3mg/0.3mL injection",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "9924901000001104",
+        "CONCEPT_ID": 3626858,
+        "CONCEPT_NAME": "RANIBIZUMAB 2.3mg/0.23mL injection",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Context-dependent",
+        "CONCEPT_CODE": "12332001000001107",
+        "CONCEPT_ID": 3649421,
+        "CONCEPT_NAME": "RANIBIZUMAB 1.65mg/0.165mL soln for inj prefilled syringe",
+        "DOMAIN_ID": "Observation",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Substance",
+        "CONCEPT_CODE": "422456007",
+        "CONCEPT_ID": 4307546,
+        "CONCEPT_NAME": "Ranibizumab",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "425256004",
+        "CONCEPT_ID": 4312252,
+        "CONCEPT_NAME": "Ranibizumab-containing product",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "424204000",
+        "CONCEPT_ID": 4314469,
+        "CONCEPT_NAME": "Ranibizumab 10mg/mL solution for intravitreal injection 0.05mL vial",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "ATC 5th",
+        "CONCEPT_CODE": "S01LA04",
+        "CONCEPT_ID": 21605124,
+        "CONCEPT_NAME": "ranibizumab; ophthalmic",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "ATC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Quant Branded Drug",
+        "CONCEPT_CODE": "OMOP2796387",
+        "CONCEPT_ID": 35794926,
+        "CONCEPT_NAME": "0.165 ML ranibizumab 10 MG/ML Injectable Solution [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "777397001",
+        "CONCEPT_ID": 36679977,
+        "CONCEPT_NAME": "Ranibizumab only product",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Clinical Drug",
+        "CONCEPT_CODE": "785128001",
+        "CONCEPT_ID": 37205646,
+        "CONCEPT_NAME": "Ranibizumab 10 mg/mL solution for injection",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Clinical Drug Form",
+        "CONCEPT_CODE": "786409006",
+        "CONCEPT_ID": 37206572,
+        "CONCEPT_NAME": "Ranibizumab only product in parenteral dose form",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Clinical Drug Form",
+        "CONCEPT_CODE": "643192",
+        "CONCEPT_ID": 40135111,
+        "CONCEPT_NAME": "ranibizumab Injectable Solution",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Branded Drug Form",
+        "CONCEPT_CODE": "644300",
+        "CONCEPT_ID": 40135112,
+        "CONCEPT_NAME": "ranibizumab Injectable Solution [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Quant Branded Drug",
+        "CONCEPT_CODE": "OMOP2603642",
+        "CONCEPT_ID": 41405680,
+        "CONCEPT_NAME": "0.3 ML ranibizumab 10 MG/ML Injectable Solution [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Quant Branded Drug",
+        "CONCEPT_CODE": "OMOP2643435",
+        "CONCEPT_ID": 41445473,
+        "CONCEPT_NAME": "0.23 ML ranibizumab 10 MG/ML Injectable Solution [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Clinical Drug",
+        "CONCEPT_CODE": "OMOP417632",
+        "CONCEPT_ID": 42481352,
+        "CONCEPT_NAME": "ranibizumab 10 MG/ML Prefilled Syringe",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Clinical Drug Form",
+        "CONCEPT_CODE": "OMOP417630",
+        "CONCEPT_ID": 42481983,
+        "CONCEPT_NAME": "ranibizumab Prefilled Syringe",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Branded Drug Form",
+        "CONCEPT_CODE": "OMOP417631",
+        "CONCEPT_ID": 42482523,
+        "CONCEPT_NAME": "ranibizumab Prefilled Syringe [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Branded Drug",
+        "CONCEPT_CODE": "OMOP417633",
+        "CONCEPT_ID": 42482524,
+        "CONCEPT_NAME": "ranibizumab 10 MG/ML Prefilled Syringe [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "d9d384c9-63ec-44a5-8e41-23975ba171ce",
+        "CONCEPT_ID": 42795607,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "236d68a8-e880-463d-b4a0-82a7bdcf0a4d",
+        "CONCEPT_ID": 42808741,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008086",
+        "CONCEPT_ID": 42847539,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 10 MG/ML Injection [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008088",
+        "CONCEPT_ID": 42847540,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 10 MG/ML Prefilled Syringe [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008203",
+        "CONCEPT_ID": 42847541,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 6 MG/ML Prefilled Syringe [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008287",
+        "CONCEPT_ID": 42847542,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 6 MG/ML Injection [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008288",
+        "CONCEPT_ID": 42847543,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 6 MG/ML Prefilled Syringe [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Marketed Product",
+        "CONCEPT_CODE": "OMOP505990",
+        "CONCEPT_ID": 43165721,
+        "CONCEPT_NAME": "0.23 ML ranibizumab 10 MG/ML Prefilled Syringe [Lucentis] Box of 1 by NOVARTIS EUROPHARM (ROYAUME-UNI)",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Marketed Product",
+        "CONCEPT_CODE": "OMOP505899",
+        "CONCEPT_ID": 43198914,
+        "CONCEPT_NAME": "0.165 ML ranibizumab 10 MG/ML Prefilled Syringe [Lucentis] Box of 1 by NOVARTIS EUROPHARM (ROYAUME-UNI)",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Branded Drug",
+        "CONCEPT_CODE": "OMOP1054591",
+        "CONCEPT_ID": 44059960,
+        "CONCEPT_NAME": "ranibizumab 10 MG/ML Injectable Solution [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Branded Drug Form",
+        "CONCEPT_CODE": "OMOP1064213",
+        "CONCEPT_ID": 44069582,
+        "CONCEPT_NAME": "ranibizumab Injectable Solution [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "RxNorm Extension"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "3324ea2f-1ca4-403c-8049-61108762e7c7",
+        "CONCEPT_ID": 44372378,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008003",
+        "CONCEPT_ID": 44420176,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 10 MG/ML Prefilled Syringe [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008202",
+        "CONCEPT_ID": 44450166,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 6 MG/ML Injection [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008002",
+        "CONCEPT_ID": 44451513,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 10 MG/ML Injection [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "7147c49b-849e-490c-a2db-f1775615198f",
+        "CONCEPT_ID": 44778906,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Procedure",
+        "CONCEPT_CODE": "525991000000108",
+        "CONCEPT_ID": 44802273,
+        "CONCEPT_NAME": "Injection of Ranibizumab into vitreous body",
+        "DOMAIN_ID": "Procedure",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "S",
+        "STANDARD_CONCEPT_CAPTION": "Standard",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008001",
+        "CONCEPT_ID": 44966588,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 10 MG/ML Injection [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "11-digit NDC",
+        "CONCEPT_CODE": "50242008201",
+        "CONCEPT_ID": 44966589,
+        "CONCEPT_NAME": "0.05 ML ranibizumab 6 MG/ML Injection [Lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "9-digit NDC",
+        "CONCEPT_CODE": "050242082",
+        "CONCEPT_ID": 44995720,
+        "CONCEPT_NAME": "RANIBIZUMAB 6 mg/mL INJECTION, SOLUTION [LUCENTIS]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "9-digit NDC",
+        "CONCEPT_CODE": "050242080",
+        "CONCEPT_ID": 45064179,
+        "CONCEPT_NAME": "RANIBIZUMAB 10 mg/mL INJECTION, SOLUTION [LUCENTIS]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "de4e66cc-ca05-4dc9-8262-e00e9b41c36d",
+        "CONCEPT_ID": 45674270,
+        "CONCEPT_NAME": "LUCENTIS - ranibizumab injection, solution",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "16cc39b1-60b4-47c2-8d88-89d5f0beacac",
+        "CONCEPT_ID": 45780438,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "9-digit NDC",
+        "CONCEPT_CODE": "502420080",
+        "CONCEPT_ID": 45828478,
+        "CONCEPT_NAME": "ranibizumab 10mg/mL INTRAVITREAL INJECTION, SOLUTION",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "9-digit NDC",
+        "CONCEPT_CODE": "502420082",
+        "CONCEPT_ID": 45828479,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL INTRAVITREAL INJECTION, SOLUTION",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "NDC"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Prescription Drug",
+        "CONCEPT_CODE": "1ec9a553-f2bc-4e05-9586-896c829a187c",
+        "CONCEPT_ID": 45894508,
+        "CONCEPT_NAME": "ranibizumab 6mg/mL / 10mg/mL INTRAVITREAL INJECTION, SOLUTION [lucentis]",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "C",
+        "STANDARD_CONCEPT_CAPTION": "Classification",
+        "VOCABULARY_ID": "SPL"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Substance",
+        "CONCEPT_CODE": "11169911000001104",
+        "CONCEPT_ID": 45958920,
+        "CONCEPT_NAME": "Ranibizumab",
+        "DOMAIN_ID": "Observation",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "11268411000001101",
+        "CONCEPT_ID": 45960312,
+        "CONCEPT_NAME": "Ranibizumab",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "24610711000001100",
+        "CONCEPT_ID": 45960804,
+        "CONCEPT_NAME": "Ranibizumab 1.65mg/0.165ml solution for injection pre-filled syringes",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "14057611000001107",
+        "CONCEPT_ID": 45964735,
+        "CONCEPT_NAME": "Ranibizumab 2.3mg/0.23ml solution for injection vials",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "11266611000001104",
+        "CONCEPT_ID": 45968112,
+        "CONCEPT_NAME": "Ranibizumab 3mg/0.3ml solution for injection vials",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "24607411000001108",
+        "CONCEPT_ID": 46078728,
+        "CONCEPT_NAME": "Ranibizumab 1.65mg/0.165ml solution for injection pre-filled syringes 1 pre-filled disposable injection",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "14038811000001106",
+        "CONCEPT_ID": 46086491,
+        "CONCEPT_NAME": "Ranibizumab 2.3mg/0.23ml solution for injection vials 1 vial",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    },
+    {
+      "concept": {
+        "CONCEPT_CLASS_ID": "Pharma/Biol Product",
+        "CONCEPT_CODE": "11266711000001108",
+        "CONCEPT_ID": 46090660,
+        "CONCEPT_NAME": "Ranibizumab 3mg/0.3ml solution for injection vials 1 vial",
+        "DOMAIN_ID": "Drug",
+        "INVALID_REASON": "V",
+        "INVALID_REASON_CAPTION": "Valid",
+        "STANDARD_CONCEPT": "",
+        "STANDARD_CONCEPT_CAPTION": "Unknown",
+        "VOCABULARY_ID": "SNOMED"
+      },
+      "isExcluded": false,
+      "includeDescendants": true,
+      "includeMapped": true
+    }
+  ]
+}
