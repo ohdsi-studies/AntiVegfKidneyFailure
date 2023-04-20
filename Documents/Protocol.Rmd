@@ -285,7 +285,7 @@ The results will be shared and discussed among the study participants and broade
 
 # Exposure Cohort Definitions
 
-```{r appendix,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
+```{r appendix_exposure,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
 source("https://raw.githubusercontent.com/ohdsi-studies/LegendT2dm/master/R/PrettyOutput.R")
 
 printCohortDefinitionFromNameAndJson(name = "Ranibizumab exposures after new use with 3 exposures in 21-70d windows",
@@ -302,5 +302,13 @@ printCohortDefinitionFromNameAndJson(name = "Aflibercept exposures after new use
 ```
 
 # Outcome Cohort Definitions
+
+```{r appendix_outcome,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
+source("https://raw.githubusercontent.com/ohdsi-studies/LegendT2dm/master/R/PrettyOutput.R")
+
+printCohortDefinitionFromNameAndJson(name = "ESRD Ref",
+                                     json = SqlRender::readSql("cohortDefinitions/esrd_outcome.json"),
+                                     withConcepts = TRUE)
+```
 
 # Negative Control Concepts {#negative-controls}
