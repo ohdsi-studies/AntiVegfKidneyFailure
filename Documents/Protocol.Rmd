@@ -306,8 +306,12 @@ printCohortDefinitionFromNameAndJson(name = "Aflibercept exposures after new use
 ```{r appendix_outcome,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
 source("https://raw.githubusercontent.com/ohdsi-studies/LegendT2dm/master/R/PrettyOutput.R")
 
-printCohortDefinitionFromNameAndJson(name = "ESRD Ref",
-                                     json = SqlRender::readSql("cohortDefinitions/esrd_outcome.json"),
+printCohortDefinitionFromNameAndJson(name = "ESRD Simple",
+                                     json = SqlRender::readSql("cohortDefinitions/outcome_esrd_simple.json"),
+                                     withConcepts = TRUE)
+
+printCohortDefinitionFromNameAndJson(name = "ESRD Complex",
+                                     json = SqlRender::readSql("cohortDefinitions/outcome_esrd_complex.json"),
                                      withConcepts = TRUE)
 ```
 
