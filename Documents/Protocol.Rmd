@@ -81,23 +81,38 @@ latex_table_font_size <- 8
 # List of Abbreviations
 
 ```{r abbreviations, echo=FALSE}
-abbreviations <- readr::read_delim(col_names = FALSE, delim = ",", trim_ws = TRUE, file = "
-Anti-VEGF, anti-vascular endothelial growth factor 
-DME, diabetic macular edema 
-DR, diabetic retinopathy 
-AMD, age-related macular degeneration 
-VO, vein occlusion 
-CKD, chronic kidney disease 
-ICD, International Classification of Diseases 
-CPT, Current Procedural Terminology 
-OHDSI, Observational Health Data Sciences and Informatics 
-OMOP, Observational Medical Outcomes Partnership 
-CDM, common data model 
-PS, propensity score 
-EHR, electronic health record 
-IRB, Institutional Review Board 
-JHM, Johns Hopkins Medicine 
-ARVO, Association for Research in Vision and Ophthalmology 
+abbreviations <- readr::read_delim(col_names = FALSE, delim = ":", trim_ws = TRUE, file = "
+Anti-VEGF: anti-vascular endothelial growth factor 
+
+DME: diabetic macular edema 
+
+DR: diabetic retinopathy 
+
+AMD: age-related macular degeneration 
+
+VO: vein occlusion 
+
+CKD: chronic kidney disease 
+
+ICD: International Classification of Diseases 
+
+CPT: Current Procedural Terminology 
+
+OHDSI: Observational Health Data Sciences and Informatics 
+
+OMOP: Observational Medical Outcomes Partnership 
+
+CDM: common data model 
+
+PS: propensity score 
+
+EHR: electronic health record 
+
+IRB: Institutional Review Board 
+
+JHM: Johns Hopkins Medicine 
+
+ARVO: The Association for Research in Vision and Ophthalmology 
 ")
 
 tab <- kable(abbreviations, col.names = NULL, linesep = "", booktabs = TRUE)
@@ -143,12 +158,12 @@ This study is undertaken within Observational Health Data Sciences and Informati
 
 # Abstract
 
-Background: The potential adverse kidney effects of the commonly used intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications are poorly understood.
-Purpose: To estimate the risk of kidney failure after intravitreal anti-VEGF medications across the Observational Health Data Sciences and Informatics (OHDSI) network, comparing ranibizumab, aflibercept, and bevacizumab.
-Design: Retrospective analysis of administrative claims and electronic health record (EHR) data in the OHDSI network.
+Background: The potential adverse kidney effects of the commonly used intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications are poorly understood. 
+Purpose: To estimate the risk of kidney failure after intravitreal anti-VEGF medications across the Observational Health Data Sciences and Informatics (OHDSI) network, comparing ranibizumab, aflibercept, and bevacizumab. 
+Design: Retrospective analysis of administrative claims and electronic health record (EHR) data in the OHDSI network. 
 Subjects: Patients with blinding diseases including diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO) who receive ≥3 monthly anti-VEGF will be included. Patients with pre-existing kidney failure will be excluded.
-Methods: Patients receiving ranibizumab will be compared to propensity score matched patients receiving aflibercept, and patients receiving bevacizumab. Propensity score models will be constructed on baseline characteristics such as demographics (age, sex, race/ethnicity), comorbidities (Charlson Comorbidity Index), and receipt of any nephrotoxic medications during the observation window. Cox models will be used to compare the time to kidney failure between patients who receive ranibizumab with patients who receive aflibercept, ranibizumab with bevacizumab, and bevacizumab with aflibercept.
-Conclusions: Knowing the relative risk for kidney failure between the three commonly used anti-VEGF medications will allow ophthalmologists to select safer treatments.
+Methods: Patients receiving ranibizumab will be compared to propensity score matched patients receiving aflibercept, and patients receiving bevacizumab. Propensity score models will be constructed on baseline characteristics such as demographics (age, sex, race/ethnicity), comorbidities (Charlson Comorbidity Index), and receipt of any nephrotoxic medications during the observation window. Cox models will be used to compare the time to kidney failure between patients who receive ranibizumab with patients who receive aflibercept, ranibizumab with bevacizumab, and bevacizumab with aflibercept. 
+Conclusions: Knowing the relative risk for kidney failure between the three commonly used anti-VEGF medications will allow ophthalmologists to select safer treatments. 
 
 
 \clearpage
@@ -270,14 +285,30 @@ The results will be shared and discussed among the study participants and broade
 
 # Exposure Cohort Definitions
 
-```{r appendix,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
-# source("")
+```{r appendix_exposure,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
+source("https://raw.githubusercontent.com/ohdsi-studies/LegendT2dm/master/R/PrettyOutput.R")
 
-# printCohortDefinitionFromNameAndJson(name = "",
-#                                     json = SqlRender::readSql(""),
-#                                     withConcepts = TRUE)
+printCohortDefinitionFromNameAndJson(name = "Ranibizumab exposures after new use with 3 exposures in 21-70d windows",
+                                     json = SqlRender::readSql("cohortDefinitions/ranibizumab_exposure.json"),
+                                     withConcepts = TRUE)
+
+printCohortDefinitionFromNameAndJson(name = "Bevacizumab exposures after new use with 3 exposures in 21-70d windows",
+                                     json = SqlRender::readSql("cohortDefinitions/bevacizumab_exposure.json"),
+                                     withConcepts = TRUE)
+
+printCohortDefinitionFromNameAndJson(name = "Aflibercept exposures after new use with 3 exposures in 21-70d windows",
+                                     json = SqlRender::readSql("cohortDefinitions/aflibercept_exposure.json"),
+                                     withConcepts = TRUE)
 ```
 
 # Outcome Cohort Definitions
+
+```{r appendix_outcome,  echo=FALSE, results="asis", warning=FALSE, message=FALSE}
+source("https://raw.githubusercontent.com/ohdsi-studies/LegendT2dm/master/R/PrettyOutput.R")
+
+printCohortDefinitionFromNameAndJson(name = "ESRD Ref",
+                                     json = SqlRender::readSql("cohortDefinitions/esrd_outcome.json"),
+                                     withConcepts = TRUE)
+```
 
 # Negative Control Concepts {#negative-controls}
