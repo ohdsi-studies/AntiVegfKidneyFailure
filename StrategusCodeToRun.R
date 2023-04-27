@@ -28,7 +28,8 @@ analysisSpecifications <- ParallelLogger::loadSettingsFromJson(
 
 storeConnectionDetails(
   connectionDetails = connectionDetails,
-  connectionDetailsReference = connectionDetailsReference
+  connectionDetailsReference = connectionDetailsReference,
+  keyringName = "sos-challenge"
 )
 
 executionSettings <- createCdmExecutionSettings(
@@ -47,7 +48,8 @@ Sys.setenv("INSTANTIATED_MODULES_FOLDER" = file.path(outputLocation, "StrategusI
 execute(
   analysisSpecifications = analysisSpecifications,
   executionSettings = executionSettings,
-  executionScriptFolder = file.path(outputLocation, "strategusExecution")
+  executionScriptFolder = file.path(outputLocation, "strategusExecution"),
+  keyringName = "sos-challenge"
 )
 
 
