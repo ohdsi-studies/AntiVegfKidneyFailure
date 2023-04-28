@@ -4,7 +4,7 @@ remotes::install_github("OHDSI/Strategus", ref="results-upload")
 library(Strategus)
 
 ##=========== START OF INPUTS ==========
-connectionDetailsReference <- "OptumDod"
+connectionDetailsReference <- "Jmdc"
 connectionDetails = DatabaseConnector::createConnectionDetails(
   dbms = keyring::key_get("dbms", keyring = "sos-challenge"),
   connectionString = keyring::key_get("cdmConnectionString", keyring = "sos-challenge"),
@@ -12,8 +12,8 @@ connectionDetails = DatabaseConnector::createConnectionDetails(
   password = keyring::key_get("password", keyring = "sos-challenge")
 )
 workDatabaseSchema <- 'scratch_asena5'
-cdmDatabaseSchema <- 'cdm_optum_extended_dod_v2323'
-outputLocation <- 'D:/git/ohdsi-studies/AntiVegfKidneyFailure'
+cdmDatabaseSchema <- 'cdm_jmdc_v2325'
+outputLocation <- 'D:/git/anthonysena/AntiVegfKidneyFailure'
 minCellCount <- 5
 cohortTableName <- "sos_vegf_kf"
 resultsDatabaseSchema <- "sos_vegf_kf"
@@ -37,8 +37,8 @@ executionSettings <- createCdmExecutionSettings(
   workDatabaseSchema = workDatabaseSchema,
   cdmDatabaseSchema = cdmDatabaseSchema,
   cohortTableNames = CohortGenerator::getCohortTableNames(cohortTable = cohortTableName),
-  workFolder = file.path(outputLocation, "strategusWork"),
-  resultsFolder = file.path(outputLocation, "strategusOutput"),
+  workFolder = file.path(outputLocation, connectionDetailsReference, "strategusWork"),
+  resultsFolder = file.path(outputLocation, connectionDetailsReference, "strategusOutput"),
   minCellCount = minCellCount
 )
 
@@ -48,7 +48,7 @@ Sys.setenv("INSTANTIATED_MODULES_FOLDER" = file.path(outputLocation, "StrategusI
 execute(
   analysisSpecifications = analysisSpecifications,
   executionSettings = executionSettings,
-  executionScriptFolder = file.path(outputLocation, "strategusExecution"),
+  executionScriptFolder = file.path(outputLocation, connectionDetailsReference, "strategusExecution"),
   keyringName = "sos-challenge"
 )
 

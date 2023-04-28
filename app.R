@@ -1,8 +1,4 @@
 # View Strategus results in the results database
-
-# Get the study configuration from the config.yml
-config <- config::get()
-
 # remotes::install_github("ohdsi/ShinyAppBuilder", ref = "develop")
 # remotes::install_github("ohdsi/OhdsiShinyModules", ref = "develop")
 
@@ -10,12 +6,21 @@ library(dplyr)
 library(ShinyAppBuilder)
 library(markdown)
 
+##=========== START OF INPUTS ==========
+
+connectionDetailsReference <- "Jmdc"
+outputLocation <- 'D:/git/anthonysena/AntiVegfKidneyFailure'
+
+##=========== END OF INPUTS ==========
+##################################
+# DO NOT MODIFY BELOW THIS POINT
+##################################
 # specify the connection to the results database
+sqliteDbPath <- file.path(outputLocation, connectionDetailsReference, "results.sqlite")
+resultsDatabaseSchema <- "main"
 resultsDatabaseConnectionDetails <- DatabaseConnector::createConnectionDetails(
-  dbms = 'postgresql', 
-  user = Sys.getenv("ASSURE_RESULTS_RO_USER"), 
-  password = Sys.getenv("ASSURE_RESULTS_RO_PASSWORD"), 
-  server = Sys.getenv("ASSURE_RESULTS_SERVER")
+  dbms = "sqlite", 
+  server = sqliteDbPath
 )
 
 # Specify about module ---------------------------------------------------------
@@ -30,7 +35,7 @@ resultDatabaseDetails <- list(
   tablePrefix = 'cg_',
   cohortTablePrefix = 'cg_',
   databaseTablePrefix = '',
-  schema = config$resultsDatabaseSchema,
+  schema = resultsDatabaseSchema,
   databaseTable = 'DATABASE_META_DATA'
 )
 cohortGeneratorModule <- createDefaultCohortGeneratorConfig(
@@ -44,7 +49,7 @@ resultDatabaseDetails <- list(
   tablePrefix = 'cd_',
 #  cohortTablePrefix = 'cg_',
   databaseTablePrefix = '',
-  schema = config$resultsDatabaseSchema,
+  schema = resultsDatabaseSchema,
   databaseTable = 'DATABASE_META_DATA'
 )
 cohortDiagnosticsModule <- createDefaultCohortDiagnosticsConfig(
@@ -58,7 +63,7 @@ resultDatabaseDetails <- list(
   tablePrefix = 'c_',
   cohortTablePrefix = 'cg_',
   databaseTablePrefix = '',
-  schema = config$resultsDatabaseSchema,
+  schema = resultsDatabaseSchema,
   databaseTable = 'DATABASE_META_DATA',
   incidenceTablePrefix = "ci_"
 )
@@ -73,7 +78,7 @@ resultDatabaseDetails <- list(
   tablePrefix = 'cm_',
   cohortTablePrefix = 'cg_',
   databaseTablePrefix = '',
-  schema = config$resultsDatabaseSchema,
+  schema = resultsDatabaseSchema,
   databaseTable = 'DATABASE_META_DATA'
 )
 cohortMethodModule <- createDefaultEstimationConfig(
@@ -87,7 +92,7 @@ resultDatabaseDetails <- list(
   tablePrefix = 'sccs_',
   cohortTablePrefix = 'cg_',
   databaseTablePrefix = '',
-  schema = config$resultsDatabaseSchema,
+  schema = resultsDatabaseSchema,
   databaseTable = 'DATABASE_META_DATA'
 )
 sccsModule <- createDefaultSCCSConfig(
@@ -101,7 +106,7 @@ resultDatabaseDetails <- list(
   tablePrefix = 'plp_',
   cohortTablePrefix = 'cg_',
   databaseTablePrefix = '',
-  schema = config$resultsDatabaseSchema,
+  schema = resultsDatabaseSchema,
   databaseTable = 'DATABASE_META_DATA'
 )
 predictionModule <- createDefaultPredictionConfig(
@@ -121,8 +126,6 @@ shinyAppConfig <- initializeModuleConfig() %>%
 
 # Launch shiny app -----------------------------------------------------
 connectionHandler <- ResultModelManager::ConnectionHandler$new(resultsDatabaseConnectionDetails)
-#viewShiny(shinyAppConfig, connectionHandler)
-#connectionHandler$closeConnection()
 ShinyAppBuilder::createShinyApp(
   config = shinyAppConfig, 
   connection = connectionHandler

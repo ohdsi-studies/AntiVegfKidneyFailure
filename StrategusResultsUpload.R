@@ -1,9 +1,20 @@
+##=========== START OF INPUTS ==========
+
+connectionDetailsReference <- "Jmdc"
+outputLocation <- 'D:/git/anthonysena/AntiVegfKidneyFailure'
+
+##=========== END OF INPUTS ==========
+##################################
+# DO NOT MODIFY BELOW THIS POINT
+##################################
+
 # Results Table Creation -------------------------------------------------------------
+strategusOutputPath <- file.path(outputLocation, connectionDetailsReference, "strategusOutput")
+sqliteDbPath <- file.path(outputLocation, connectionDetailsReference, "results.sqlite")
+resultsDatabaseSchema <- "main"
 resultsDatabaseConnectionDetails <- DatabaseConnector::createConnectionDetails(
-  dbms = "postgresql",
-  connectionString = keyring::key_get("resultsServer", keyring = "ohda"),
-  user = keyring::key_get("resultsUser", keyring = "ohda"),
-  password = keyring::key_get("resultsPassword", keyring = "ohda")
+  dbms = "sqlite", 
+  server = sqliteDbPath
 )
 
 # Setup logging 
@@ -19,19 +30,14 @@ ParallelLogger::addDefaultErrorReportLogger(
 # Connect to the database 
 connection <- DatabaseConnector::connect(connectionDetails = resultsDatabaseConnectionDetails)
 
-# Create the schema (PG Specific)
-sql <- "DROP SCHEMA IF EXISTS @schema CASCADE; CREATE SCHEMA @schema;"
-sql <- SqlRender::render(sql = sql, schema = resultsDatabaseSchema)
-DatabaseConnector::executeSql(connection = connection, sql = sql)
-
 # Create the tables
 isModuleComplete <- function(moduleFolder) {
   doneFileFound <- (length(list.files(path = moduleFolder, pattern = "done")) > 0)
   isDatabaseMetaDataFolder <- basename(moduleFolder) == "DatabaseMetaData"
   return(doneFileFound || isDatabaseMetaDataFolder)
 }
-moduleFolders <- list.dirs(path = file.path(outputLocation, "strategusOutput"), recursive = FALSE)
-message("Creating result tables based on definitions found in ", file.path(outputLocation, "strategusOutput"))
+moduleFolders <- list.dirs(path = strategusOutputPath, recursive = FALSE)
+message("Creating result tables based on definitions found in ", strategusOutputPath)
 for (moduleFolder in moduleFolders) {
   moduleName <- basename(moduleFolder)
   if (!isModuleComplete(moduleFolder)) {
@@ -77,20 +83,6 @@ for (moduleFolder in moduleFolders) {
   }
 }
 
-# Grant read only permissions to all tables (PG Specific)
-sql <- "GRANT USAGE ON SCHEMA @schema TO @results_user;
-        GRANT SELECT ON ALL TABLES IN SCHEMA @schema TO @results_user; 
-        GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA @schema TO @results_user;"
-sql <- SqlRender::render(
-  sql = sql, 
-  schema = resultsDatabaseSchema,
-  results_user = keyring::key_get("resultsUser", keyring = "ohda")
-)
-DatabaseConnector::executeSql(connection = connection, sql = sql)
-
-# Disconnect from the database
-DatabaseConnector::disconnect(connection)
-
 # Unregister loggers
 ParallelLogger::unregisterLogger("RESULTS_SCHEMA_SETUP_FILE_LOGGER")
 ParallelLogger::unregisterLogger("RESULTS_SCHEMA_SETUP_ERROR_LOGGER")
@@ -105,18 +97,8 @@ ParallelLogger::addDefaultErrorReportLogger(
   name = "RESULTS_ERROR_LOGGER"
 )
 
-# Connect to the database ------------------------------------------------------
-connection <- DatabaseConnector::connect(connectionDetails = resultsDatabaseConnectionDetails)
-
 # Upload results -----------------
-isModuleComplete <- function(moduleFolder) {
-  doneFileFound <- (length(list.files(path = moduleFolder, pattern = "done")) > 0)
-  isDatabaseMetaDataFolder <- basename(moduleFolder) == "DatabaseMetaData"
-  return(doneFileFound || isDatabaseMetaDataFolder)
-}
-# TODO - augment the execution pipeline to save things per-database
 message("Uploading results")
-moduleFolders <- list.dirs(path =  file.path(outputLocation, "strategusOutput"), recursive = FALSE)
 for (moduleFolder in moduleFolders) {
   moduleName <- basename(moduleFolder)
   if (!isModuleComplete(moduleFolder)) {
@@ -130,7 +112,7 @@ for (moduleFolder in moduleFolders) {
       )
       message("Loading PLP results")
       modulePath <- list.files(
-        path = file.path(outputLocation, "strategusOutput"), 
+        path = strategusOutputPath, 
         pattern = "PatientLevelPredictionModule",
         full.names = TRUE,
         include.dirs = TRUE
@@ -143,7 +125,7 @@ for (moduleFolder in moduleFolders) {
           csvFolder = modulePath,
           connectionDetails = resultsDatabaseConnectionDetails,
           databaseSchemaSettings = dbSchemaSettings,
-          modelSaveLocation =  file.path(outputLocation, "strategusOutput", "PlPModels"),
+          modelSaveLocation =  file.path(strategusOutputPath, "PlPModels"),
           csvTableAppend = ""
         )
       }        
@@ -161,8 +143,7 @@ for (moduleFolder in moduleFolders) {
           resultsFolder = moduleFolder,
           purgeSiteDataBeforeUploading = TRUE,
           databaseIdentifierFile = file.path(
-            outputLocation, 
-            "strategusOutput",
+            strategusOutputPath,
             "DatabaseMetaData/database_meta_data.csv"
           ),
           runCheckAndFixCommands = runCheckAndFixCommands,
