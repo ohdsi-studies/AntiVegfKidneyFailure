@@ -14,7 +14,7 @@
 # installedPackages[installedPackages$Package %in% c("CohortGenerator", "CohortDiagnostics", "Characterization", "CohortIncidence", "CohortMethod", "SelfControlledCaseSeries", "PatientLevelPrediction", "ROhdsiWebApi"), ]
 
 library(dplyr)
-rootFolder <- "C:/SOS/VEGF ESRD"
+rootFolder <- "D:/git/anthonysena/AntiVegfKidneyFailure"
 
 tcis <- list(
   list(
@@ -150,8 +150,10 @@ negativeControlOutcomeCohortSet <- ROhdsiWebApi::getConceptSetDefinition(
   mutate(cohortId = row_number() + 1000)
 
 
-# TODO: we need to get the unique indication + target/comparator 
-# and then 
+# Get the unique subset criteria from the tcis
+# object to construct the cohortDefintionSet's 
+# subset definitions for each target/comparator
+# cohort
 dfUniqueTcis <- data.frame()
 for (i in seq_along(tcis)) {
   dfUniqueTcis <- rbind(dfUniqueTcis, data.frame(cohortId = tcis[[i]]$targetId,
@@ -167,13 +169,26 @@ for (i in seq_along(tcis)) {
                                                  maxAge = paste(tcis[[i]]$maxAge, collapse = ",")
   ))
 }
+
 dfUniqueTcis <- unique(dfUniqueTcis)
-for (i in 1:nrow(dfUniqueTcis)) {
-  tci <- dfUniqueTcis[i,]
+dfUniqueTcis$subsetDefinitionId <- 0 # Adding as a placeholder for loop below
+dfUniqueSubsetCriteria <- unique(dfUniqueTcis[,-1])
+
+for (i in 1:nrow(dfUniqueSubsetCriteria)) {
+  uniqueSubsetCriteria <- dfUniqueSubsetCriteria[i,]
+  dfCurrentTcis <- dfUniqueTcis[dfUniqueTcis$indicationId == uniqueSubsetCriteria$indicationId &
+                                  dfUniqueTcis$genderConceptIds == uniqueSubsetCriteria$genderConceptIds &
+                                  dfUniqueTcis$minAge == uniqueSubsetCriteria$minAge & 
+                                  dfUniqueTcis$maxAge == uniqueSubsetCriteria$maxAge,]
+  targetCohortIdsForSubsetCriteria <- as.integer(dfCurrentTcis[, "cohortId"])
+  dfUniqueTcis <- dfUniqueTcis %>%
+    inner_join(dfCurrentTcis) %>%
+    mutate(subsetDefinitionId = i)
+    
   subsetOperators <- list()
-  if (tci$indicationId != "") {
+  if (uniqueSubsetCriteria$indicationId != "") {
     subsetOperators[[length(subsetOperators) + 1]] <- CohortGenerator::createCohortSubset(
-      cohortIds = tci$indicationId,
+      cohortIds = uniqueSubsetCriteria$indicationId,
       negate = FALSE,
       cohortCombinationOperator = "all",
       startWindow = CohortGenerator::createSubsetCohortWindow(-99999, 0, "cohortStart"),
@@ -185,13 +200,13 @@ for (i in 1:nrow(dfUniqueTcis)) {
     followUpTime = 1,
     limitTo = "firstEver"
   )
-  if (tci$genderConceptIds != "" ||
-      tci$minAge != "" ||
-      tci$maxAge != "") {
+  if (uniqueSubsetCriteria$genderConceptIds != "" ||
+      uniqueSubsetCriteria$minAge != "" ||
+      uniqueSubsetCriteria$maxAge != "") {
     subsetOperators[[length(subsetOperators) + 1]] <- CohortGenerator::createDemographicSubset(
-      ageMin = if(tci$minAge == "") 0 else as.integer(tci$minAge),
-      ageMax = if(tci$maxAge == "") 99999 else as.integer(tci$maxAge),
-      gender = if(tci$genderConceptIds == "") NULL else as.integer(strsplit(tci$genderConceptIds, ",")[[1]])
+      ageMin = if(uniqueSubsetCriteria$minAge == "") 0 else as.integer(uniqueSubsetCriteria$minAge),
+      ageMax = if(uniqueSubsetCriteria$maxAge == "") 99999 else as.integer(uniqueSubsetCriteria$maxAge),
+      gender = if(uniqueSubsetCriteria$genderConceptIds == "") NULL else as.integer(strsplit(uniqueSubsetCriteria$genderConceptIds, ",")[[1]])
     )
   }
   if (studyStartDate != "" || studyEndDate != "") {
@@ -208,45 +223,22 @@ for (i in 1:nrow(dfUniqueTcis)) {
   cohortDefinitionSet <- cohortDefinitionSet %>%
     CohortGenerator::addCohortSubsetDefinition(
       cohortSubsetDefintion = subsetDef,
-      targetCohortIds = tci$cohortId
+      targetCohortIds = targetCohortIdsForSubsetCriteria
     ) 
-}
-
-dfUniqueIndications <- unique(dfUniqueTcis[,-1])
-for (i in 1:nrow(dfUniqueIndications)) {
-  indicationCohort <- dfUniqueIndications[i,]
-  subsetOperators <- list()
-  subsetId <- nrow(dfUniqueTcis) + i
-  subsetOperators[[length(subsetOperators) + 1]] <- CohortGenerator::createLimitSubset(
-    priorTime = 365,
-    followUpTime = 1,
-    limitTo = "firstEver"
-  )
-  if (indicationCohort$genderConceptIds != "" ||
-      indicationCohort$minAge != "" ||
-      indicationCohort$maxAge != "") {
-    subsetOperators[[length(subsetOperators) + 1]] <- CohortGenerator::createDemographicSubset(
-      ageMin = if(indicationCohort$minAge == "") 0 else as.integer(indicationCohort$minAge),
-      ageMax = if(indicationCohort$maxAge == "") 99999 else as.integer(indicationCohort$maxAge),
-      gender = if(indicationCohort$genderConceptIds == "") NULL else as.integer(strsplit(indicationCohort$genderConceptIds, ",")[[1]])
+  
+  if (!is.null(uniqueSubsetCriteria$indicationId)) {
+    # Also create restricted version of indication cohort:
+    subsetDef <- CohortGenerator::createCohortSubsetDefinition(
+      name = "",
+      definitionId = i + 100,
+      subsetOperators = subsetOperators[2:length(subsetOperators)]
     )
-  }
-  if (studyStartDate != "" || studyEndDate != "") {
-    subsetOperators[[length(subsetOperators) + 1]] <- CohortGenerator::createLimitSubset(
-      calendarStartDate = if (studyStartDate == "") NULL else as.Date(studyStartDate, "%Y%m%d"),
-      calendarEndDate = if (studyEndDate == "") NULL else as.Date(studyEndDate, "%Y%m%d")
-    )
-  }
-  subsetDef <- CohortGenerator::createCohortSubsetDefinition(
-    name = "",
-    definitionId = subsetId,
-    subsetOperators = subsetOperators
-  )
-  cohortDefinitionSet <- cohortDefinitionSet %>%
-    CohortGenerator::addCohortSubsetDefinition(
-      cohortSubsetDefintion = subsetDef,
-      targetCohortIds = as.integer(indicationCohort$indicationId)
-    ) 
+    cohortDefinitionSet <- cohortDefinitionSet %>%
+      CohortGenerator::addCohortSubsetDefinition(
+        cohortSubsetDefintion = subsetDef,
+        targetCohortIds = as.integer(uniqueSubsetCriteria$indicationId)
+      )
+  }  
 }
 
 if (any(duplicated(cohortDefinitionSet$cohortId, negativeControlOutcomeCohortSet$cohortId))) {
@@ -289,7 +281,7 @@ cohortDiagnosticsModuleSpecifications <- createCohortDiagnosticsModuleSpecificat
 
 
 # CharacterizationModule Settings ---------------------------------------------
-source("https://raw.githubusercontent.com/OHDSI/CharacterizationModule/v0.3.1/SettingsFunctions.R")
+source("https://raw.githubusercontent.com/OHDSI/CharacterizationModule/v0.3.2/SettingsFunctions.R")
 allCohortIdsExceptOutcomes <- cohortDefinitionSet %>%
   filter(!cohortId %in% outcomes$cohortId) %>%
   pull(cohortId)
@@ -299,6 +291,7 @@ characterizationModuleSpecifications <- createCharacterizationModuleSpecificatio
   dechallengeStopInterval = 30,
   dechallengeEvaluationWindow = 30,
   timeAtRisk = timeAtRisks,
+  minPriorObservation = 365,
   covariateSettings = FeatureExtraction::createDefaultCovariateSettings()
 )
 
@@ -389,11 +382,21 @@ outcomeList <- append(
 targetComparatorOutcomesList <- list()
 for (i in seq_along(tcis)) {
   tci <- tcis[[i]]
+  # Get the subset definition ID that matches
+  # the target ID. The comparator will also use the same subset
+  # definition ID
+  subsetDefinitionId <- dfUniqueTcis %>% 
+    filter(cohortId == tci$targetId &
+             paste(indicationId, collapse = ",") == paste(tci$indicationId, collapse = ",") &
+             paste(genderConceptIds, collapse = ",") == paste(tci$genderConceptIds, collapse = ",") &
+             paste(minAge, collapse = ",") == paste(tci$minAge, collapse = ",") &
+             paste(maxAge, collapse = ",") == paste(tci$maxAge, collapse = ",")) %>%
+    pull(subsetDefinitionId)
   targetId <- cohortDefinitionSet %>% 
-    filter(subsetParent == tci$targetId & subsetDefinitionId == i) %>%
+    filter(subsetParent == tci$targetId & subsetDefinitionId == subsetDefinitionId) %>%
     pull(cohortId)
   comparatorId <- cohortDefinitionSet %>% 
-    filter(subsetParent == tci$comparatorId & subsetDefinitionId == i) %>%
+    filter(subsetParent == tci$comparatorId & subsetDefinitionId == subsetDefinitionId) %>%
     pull(cohortId)
   targetComparatorOutcomesList[[i]] <- CohortMethod::createTargetComparatorOutcomes(
     targetId = targetId,
@@ -680,10 +683,10 @@ selfControlledModuleSpecifications <- creatSelfControlledCaseSeriesModuleSpecifi
 source("https://raw.githubusercontent.com/OHDSI/PatientLevelPredictionModule/v0.1.0/SettingsFunctions.R")
 
 modelDesignList <- list()
-for (i in seq_along(tcis)) {
-  tci <- tcis[[i]]
-  targetId <- cohortDefinitionSet %>% 
-    filter(subsetParent == tci$targetId & subsetDefinitionId == i) %>%
+for (i in 1:nrow(dfUniqueTcis)) {
+  tci <- dfUniqueTcis[i,]
+  cohortId <- cohortDefinitionSet %>% 
+    filter(subsetParent == tci$cohortId & subsetDefinitionId == tci$subsetDefinitionId) %>%
     pull(cohortId)
   for (j in seq_len(nrow(plpTimeAtRisks))) {
     for (k in seq_along(nrow(outcomes))) {
@@ -692,7 +695,7 @@ for (i in seq_along(tcis)) {
       else
         priorOutcomeLookback <- 99999
       modelDesignList[[length(modelDesignList) + 1]] <- PatientLevelPrediction::createModelDesign(
-        targetId = targetId,
+        targetId = cohortId,
         outcomeId = outcomes$cohortId[k],
         restrictPlpDataSettings = PatientLevelPrediction::createRestrictPlpDataSettings(
           sampleSize = 1000000,
@@ -749,4 +752,4 @@ analysisSpecifications <- Strategus::createEmptyAnalysisSpecificiations() %>%
 if (!dir.exists(rootFolder)) {
   dir.create(rootFolder, recursive = TRUE)
 }
-ParallelLogger::saveSettingsToJson(analysisSpecifications, file.path(rootFolder, "analysisSpecifications.json"))
+ParallelLogger::saveSettingsToJson(analysisSpecifications, file.path(rootFolder, "inst/analysisSpecification.json"))
