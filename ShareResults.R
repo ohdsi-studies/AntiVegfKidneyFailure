@@ -10,7 +10,7 @@ userName <- "study-data-site-covid19"
 ##################################
 
 rootFTPFolder <- function() {
-  return("/sos-fq/")
+  return("/sos-anti-vegf-kf/")
 }
 
 zipResults <- function(outputLocation, connectionDetailsReference) {
