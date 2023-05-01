@@ -1,6 +1,6 @@
 # install the network package
 # install.packages('remotes')
-remotes::install_github("OHDSI/Strategus", ref="results-upload")
+# remotes::install_github("OHDSI/Strategus", ref="results-upload")
 library(Strategus)
 
 ##=========== START OF INPUTS ==========
