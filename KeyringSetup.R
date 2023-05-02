@@ -46,13 +46,13 @@ keyring::keyring_create(keyring = keyringName, password = keyringPassword)
 
 # Store the the user-specific configuration -----
 keyring::key_set_with_value("dbms", password = dbms, keyring = keyringName)
-keyring::key_set_with_value("cdmConnectionString", password = cdmConnectionString, keyring = keyringName)
+keyring::key_set_with_value("connectionString", password = connectionString, keyring = keyringName)
 keyring::key_set_with_value("username", password = username, keyring = keyringName)
 keyring::key_set_with_value("password", password = password, keyring = keyringName)
 
 # Print the values to confirm the configuration
 message("Keyring values set as:")
-keys <- c("dbms", "cdmConnectionString", "username", "password")
+keys <- c("dbms", "connectionString", "username", "password")
 for (i in seq_along(keys)) {
   message(paste0(" - ", keys[i], ": ", keyring::key_get(keys[i], keyring = keyringName)))
 }
