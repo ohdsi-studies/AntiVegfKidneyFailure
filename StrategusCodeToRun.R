@@ -1,22 +1,23 @@
 # install the network package
-# install.packages('remotes')
-# remotes::install_github("OHDSI/Strategus", ref="results-upload")
+install.packages('remotes')
+remotes::install_github("OHDSI/Strategus", ref="results-upload")
 library(Strategus)
 
 ##=========== START OF INPUTS ==========
 connectionDetailsReference <- "Jmdc"
-connectionDetails = DatabaseConnector::createConnectionDetails(
-  dbms = keyring::key_get("dbms", keyring = "sos-challenge"),
-  connectionString = keyring::key_get("cdmConnectionString", keyring = "sos-challenge"),
-  user = keyring::key_get("username", keyring = "sos-challenge"),
-  password = keyring::key_get("password", keyring = "sos-challenge")
-)
 workDatabaseSchema <- 'scratch_asena5'
 cdmDatabaseSchema <- 'cdm_jmdc_v2325'
 outputLocation <- 'D:/git/anthonysena/AntiVegfKidneyFailure'
 minCellCount <- 5
 cohortTableName <- "sos_vegf_kf"
-resultsDatabaseSchema <- "sos_vegf_kf"
+
+# the keyring entry should correspond to what you selected in KeyringSetup.R
+connectionDetails = DatabaseConnector::createConnectionDetails(
+  dbms = keyring::key_get("dbms", keyring = "sos-challenge"),
+  connectionString = keyring::key_get("connectionString", keyring = "sos-challenge"),
+  user = keyring::key_get("username", keyring = "sos-challenge"),
+  password = keyring::key_get("password", keyring = "sos-challenge")
+)
 
 ##=========== END OF INPUTS ==========
 ##################################
