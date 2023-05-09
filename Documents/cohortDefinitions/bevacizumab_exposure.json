@@ -300,6 +300,52 @@
           }
         ]
       }
+    },
+    {
+      "id": 9,
+      "name": "[SOS] aflibercept",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Ingredient",
+              "CONCEPT_CODE": "1232150",
+              "CONCEPT_ID": 40244266,
+              "CONCEPT_NAME": "aflibercept",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "RxNorm"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "name": "[SOS] ranibizumab",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Ingredient",
+              "CONCEPT_CODE": "595060",
+              "CONCEPT_ID": 19080982,
+              "CONCEPT_NAME": "ranibizumab",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "RxNorm"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
     }
   ],
   "PrimaryCriteria": {
@@ -595,7 +641,18 @@
       "Offset": 0
     }
   },
-  "CensoringCriteria": [],
+  "CensoringCriteria": [
+    {
+      "DrugExposure": {
+        "CodesetId": 9
+      }
+    },
+    {
+      "DrugExposure": {
+        "CodesetId": 10
+      }
+    }
+  ],
   "CollapseSettings": {
     "CollapseType": "ERA",
     "EraPad": 0

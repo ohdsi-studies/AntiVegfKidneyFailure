@@ -300,6 +300,52 @@
           }
         ]
       }
+    },
+    {
+      "id": 8,
+      "name": "[SOS] bevacizumab",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Ingredient",
+              "CONCEPT_CODE": "253337",
+              "CONCEPT_ID": 1397141,
+              "CONCEPT_NAME": "bevacizumab",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "RxNorm"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "name": "[SOS] ranibizumab",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Ingredient",
+              "CONCEPT_CODE": "595060",
+              "CONCEPT_ID": 19080982,
+              "CONCEPT_NAME": "ranibizumab",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "RxNorm"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
     }
   ],
   "PrimaryCriteria": {
@@ -595,7 +641,18 @@
       "Offset": 0
     }
   },
-  "CensoringCriteria": [],
+  "CensoringCriteria": [
+    {
+      "DrugExposure": {
+        "CodesetId": 8
+      }
+    },
+    {
+      "DrugExposure": {
+        "CodesetId": 9
+      }
+    }
+  ],
   "CollapseSettings": {
     "CollapseType": "ERA",
     "EraPad": 0
