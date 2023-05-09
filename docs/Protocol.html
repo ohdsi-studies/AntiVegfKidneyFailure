@@ -2807,28 +2807,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-
-div.csl-bib-body { }
-div.csl-entry {
-clear: both;
-}
-.hanging div.csl-entry {
-margin-left:2em;
-text-indent:-2em;
-}
-div.csl-left-margin {
-min-width:2em;
-float:left;
-}
-div.csl-right-inline {
-margin-left:2em;
-padding-left:1em;
-}
-div.csl-indent {
-margin-left: 2em;
-}
-</style>
 
 <style type="text/css">#TOC::before {
 content: "";
@@ -3004,7 +2982,7 @@ border-radius: 0px;
 <h1 class="title toc-ignore"><div class="line-block">RESEARCH PROTOCOL<br />
 <br />
 Estimating the comparative risk of kidney failure associated with intravitreal anti-vascular endothelial growth factor exposure in patients with blinding diseases</div></h1>
-<h3 class="subtitle">Version: 0.0.1</h3>
+<h3 class="subtitle">Version: 0.0.2</h3>
 
 </div>
 
@@ -3185,12 +3163,12 @@ Wilmer Eye Institute, Johns Hopkins Hospital, Baltimore, MD, USA
 </div>
 <div id="abstract" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Abstract</h1>
-<p>Background: The potential adverse kidney effects of the commonly used intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications are poorly understood.
-Purpose: To estimate the risk of kidney failure after intravitreal anti-VEGF medications across the Observational Health Data Sciences and Informatics (OHDSI) network, comparing ranibizumab, aflibercept, and bevacizumab.
-Design: Retrospective analysis of administrative claims and electronic health record (EHR) data in the OHDSI network.
-Subjects: Patients with blinding diseases including diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO) who receive ≥3 monthly anti-VEGF will be included. Patients with pre-existing kidney failure will be excluded.
-Methods: Patients receiving ranibizumab will be compared to propensity score matched patients receiving aflibercept, and patients receiving bevacizumab. Propensity score models will be constructed on baseline characteristics such as demographics (age, sex, race/ethnicity), comorbidities (Charlson Comorbidity Index), and receipt of any nephrotoxic medications during the observation window. Cox models will be used to compare the time to kidney failure between patients who receive ranibizumab with patients who receive aflibercept, ranibizumab with bevacizumab, and bevacizumab with aflibercept.
-Conclusions: Knowing the relative risk for kidney failure between the three commonly used anti-VEGF medications will allow ophthalmologists to select safer treatments.</p>
+<p>Background: The potential adverse kidney effects of the commonly used intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications are poorly understood.</p>
+<p>Purpose: To estimate the risk of kidney failure after intravitreal anti-VEGF medications across the Observational Health Data Sciences and Informatics (OHDSI) network, comparing ranibizumab, aflibercept, and bevacizumab.</p>
+<p>Design: Retrospective comparative cohort analysis of administrative claims and electronic health record (EHR) data in the OHDSI network.</p>
+<p>Subjects: Patients with blinding diseases including diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO) who receive ≥3 monthly anti-VEGF will be included. Patients with pre-existing kidney failure will be excluded.</p>
+<p>Methods: Patients receiving ranibizumab will be compared to propensity score matched patients receiving aflibercept, and patients receiving bevacizumab. We will deploy the large-scale propensity score method that adjust for a comprehensive range of baseline characteristics. Cox models will be used to compare the time to kidney failure between patients who receive ranibizumab with patients who receive aflibercept, ranibizumab with bevacizumab, and bevacizumab with aflibercept.</p>
+<p>Conclusions: Knowing the relative risk for kidney failure between the three commonly used anti-VEGF medications will allow ophthalmologists to select safer treatments.</p>
 </div>
 <div id="amendments-and-updates" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Amendments and Updates</h1>
@@ -3281,25 +3259,29 @@ Reason
 </div>
 <div id="rationale-and-background" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Rationale and Background</h1>
-<p>Intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications have revolutionized the treatment of blinding diseases.<span class="citation">[<a href="#ref-Martin_2018">1</a>,<a href="#ref-Steinmetz_2021">2</a>]</span> Nearly 20 million intravitreal injections were given globally in 2016 to treat conditions such as diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO).<span class="citation">[<a href="#ref-Martin_2018">1</a>]</span> When given systemically, anti-VEGF medications have adverse kidney effects (e.g., proteinuria, acute kidney injury).<span class="citation">[<a href="#ref-Hanna_2019">3</a>–<a href="#ref-Izzedine_2014">5</a>]</span> Patients at high risk for chronic kidney disease (CKD), for example, those ≥60 years and those with diabetes, may be preferentially harmed by the adverse kidney effects of intravitreal anti-VEGF.<span class="citation">[<a href="#ref-Levey_2007">6</a>]</span> CKD can progress to kidney failure, which is a major source of morbidity and mortality for the patient and is a financial burden to society.<span class="citation">[<a href="#ref-Levey_2007">6</a>,<a href="#ref-Bikbov_2020">7</a>]</span></p>
-<p>When anti-VEGF medications are given intravitreally, there is systemic absorption of the drug that is greatest with bevacizumb and aflibercept and lowest with ranibizumab.<span class="citation">[<a href="#ref-Avery_2014">8</a>,<a href="#ref-Avery_2017">9</a>]</span> However, evidence about the subsequent kidney effect is conflicting. Several case reports document kidney damage after intravitreal anti-VEGF.<span class="citation">[<a href="#ref-Cheungpasitporn_2015">10</a>–<a href="#ref-Shye_2020">12</a>]</span> On the other hand, retrospective cohort studies have not identified treatment-associated declines in kidney function, or estimated glomerular filtration rate (eGFR).<span class="citation">[<a href="#ref-O_Neill_2019">14</a>]</span> A secondary analysis from a randomized trial also did not show differences in rates of kidney damage.<span class="citation">[<a href="#ref-Glassman_2018">15</a>]</span> However, these studies were either limited to a single institution, had small sample sizes (&lt;600 patients), only included patients without CKD, and did not evaluate the severe phenotype of kidney failure. To resolve this controversy, a comprehensive study is needed to evaluate the kidney effects of intravitreal anti-VEGF. In populations at high risk for CKD, the treating ophthalmologist can choose alternate forms of therapy (e.g., focal laser for DME), or the intravitreal anti-VEGF with the least systemic absorption (e.g., ranibizumab).<span class="citation">[<a href="#ref-2015">17</a>]</span></p>
+<p>Intravitreal anti-vascular endothelial growth factor (anti-VEGF) medications have revolutionized the treatment of blinding diseases.​1,2​ Nearly 20 million intravitreal injections were given globally in 2016 to treat conditions such as diabetic macular edema (DME), diabetic retinopathy (DR), age-related macular degeneration (AMD), and vein occlusion (VO).​1​ When given systemically, anti-VEGF medications have adverse kidney effects (e.g., proteinuria, acute kidney injury).​3–5​ Patients at high risk for chronic kidney disease (CKD), for example, those ≥60 years and those with diabetes, may be more likely harmed by the adverse kidney effects of intravitreal anti-VEGF.​6​ CKD can progress to kidney failure, or end stage kidney disease, which is a major source of morbidity and mortality and is a financial burden to society.​6,7​</p>
+<p>When anti-VEGF medications are given intravitreally, there is systemic absorption of the drug that is greatest with bevacizumab and aflibercept and lowest with ranibizumab.​8,9​ However, evidence about the subsequent kidney effect is conflicting. Several case reports document kidney damage after intravitreal anti-VEGF.​10–12​ On the other hand, retrospective cohort studies have not identified treatment-associated declines in kidney function, or estimated glomerular filtration rate (eGFR).​13,14​ A secondary analysis from a randomized trial also did not show differences in rates of kidney damage.​15​ However, these studies were limited to a single institution, had small sample sizes (&lt;600 patients), only included patients without CKD, or did not evaluate the severe phenotype of kidney failure. To resolve this controversy, a comprehensive study is needed to evaluate the kidney effects of intravitreal anti-VEGF. In populations at high risk for CKD, the treating ophthalmologist can choose alternate forms of therapy (e.g., focal laser for DME), or the intravitreal anti-VEGF with the least systemic absorption (e.g., ranibizumab).​16–18​</p>
 </div>
 <div id="study-objectives" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Study Objectives</h1>
-<p>The overall objective of the proposal is to estimate the comparative risk of kidney failure associated with intravitreal anti-vascular endothelial growth factor exposure in patients with blinding diseases. The rationale is that knowing the comparative risk for kidney failure among the three commonly used anti-VEGF medications will allow the ophthalmologist to select the safest treatments, particularly for populations at high risk for adverse kidney effects. To address our hypothesis, we propose the following specific aims.
-1. Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to ranibizumab increase the risk of kidney failure, relative to aflibercept?
-2. Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to ranibizumab increase the risk of kidney failure, relative to bevacizumab?
-3. Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to bevacizumab increase the risk of kidney failure, relative to aflibercept?</p>
+<p>The overall objective of the study is to estimate the comparative risk of kidney failure associated with intravitreal anti-VEGF exposure in patients with blinding diseases. The rationale is that knowing the comparative risk for kidney failure among the three commonly used anti-VEGF medications will allow the ophthalmologist to select the safest treatments, particularly for populations at high risk for adverse kidney effects. To address our hypothesis, we propose the following questions.</p>
+<ol style="list-style-type: decimal">
+<li><p>Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to aflibercept increase the risk of kidney failure, relative to ranibizumab?</p></li>
+<li><p>Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to bevavizumab increase the risk of kidney failure, relative to ranibizumab?</p></li>
+<li><p>Amongst people with blinding diseases (DR/DME, AMD, and VO), does exposure to bevacizumab increase the risk of kidney failure, relative to aflibercept?</p></li>
+</ol>
 </div>
 <div id="research-methods" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> Research Methods</h1>
 <div id="study-designdata-sources" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Study Design/Data Sources</h2>
-<p>This will be a retrospective study of patients with blinding diseases (DR/DME, AMD, and VO) comparing the risk of kidney failure after exposure to ranibizumab relative to aflibercept, ranibizumab to bevacizumab, and bevacizumab to aflibercept. Data sources will be administrative claims or electronic health record (EHR) data across the OHDSI network.</p>
+<p>This will be a retrospective cohort study of patients with blinding diseases (DR/DME, AMD, and VO) comparing the risk of kidney failure after exposure to aflibercept relative to ranibizumab, bevacizumab to ranibizumab, and bevacizumab to aflibercept. Data sources will be administrative claims or electronic health record (EHR) data across the OHDSI network.</p>
 </div>
 <div id="study-population" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Study Population</h2>
-<p>Patients ≥18 years who have received ≥3 monthly intravitreal anti-VEGF injections with ranibizumab, aflibercept, or bevacizumab for a diagnosis of DME/DR, AMD, and VO will be included in the study.<span class="citation">[<a href="#ref-Kertes_2019">20</a>]</span> Cohort entry will begin with the initiation of the anti-VEGF medications. Patients with pre-existing kidney failure will be excluded. (Figure 1, Figure 2) For the primary analysis, only patients who are on monotherapy (e.g., only ranibizumab, only aflibercept, only bevacizumab) will be included.</p>
+<p>Patients ≥18 years who have received ≥3 monthly intravitreal anti-VEGF injections with ranibizumab, aflibercept, or bevacizumab with a diagnosis of DME/DR, AMD, and VO with at least 365 days of prior observation will be included in the study.​16,17,19–22​ Cohort entry will begin with the third anti-VEGF medication. Patients with pre-existing kidney failure will be excluded. Patients with pre-existing diagnosis of malignancies will be excluded. (Figure 1) Patients will exit the cohort if they switch to another anti-VEGF medication (e.g., bevacizumab to ranibizumab).</p>
+<p>Figure 1: Exposure cohort definition using bevacizumab as the example.
+<img src="data:image/png;base64,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" alt="Figure 1: Exposure cohort definition using bevacizumab as the example." /></p>
 </div>
 <div id="exposure-comparators" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Exposure Comparators</h2>
@@ -3307,33 +3289,65 @@ Reason
 </div>
 <div id="outcomes" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Outcomes</h2>
-<p>The outcome is time from anti-VEGF initiation to kidney failure, as defined by previously validated OMOP phenotypes using ICD and CPT codes, during the observation window.<span class="citation">[<a href="#ref-Norton_2019">21</a>]</span></p>
+<p>The outcome is time from the third anti-VEGF to kidney failure, as defined by previously validated OMOP phenotypes, during the observation window after cohort entry.​23,24​</p>
 </div>
 <div id="covariates" class="section level2" number="8.5">
 <h2><span class="header-section-number">8.5</span> Covariates</h2>
-<p>For databases that provide sufficient sample sizes (&gt;= 1,000) in each target and comparator cohorts, we will deploy the large-scale propensity score method that adjust for a comprehensive range of baseline characteristics.<span class="citation">[<a href="#ref-Tian_2018">22</a>]</span> For smaller databases, we will select a smaller number chosen based on expert opinion: demographics (age, sex, race/ethnicity), ophthalmic indication for anti-VEGF (DME/DR, AMD, or VO), ophthalmic comorbidities (e.g., glaucoma, cataracts, other retinal diseases), medical comorbidities (Charlson Comorbidity Index), and receipt of any nephrotoxic medications during the observation window (e.g., aminoglycosides).<span class="citation">[<a href="#ref-Perazella_2018">23</a>]</span></p>
+<p>We will deploy the large-scale propensity score method that adjust for a comprehensive range of baseline characteristics.​25​</p>
+</div>
+<div id="negative-controls" class="section level2" number="8.6">
+<h2><span class="header-section-number">8.6</span> Negative controls</h2>
+<p>Negative controls will be picked to represent exposure-outcome pairs where no causal effect is expected to exist.</p>
 </div>
 </div>
-<div id="analysis-plan" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Analysis Plan</h1>
-<div id="calculation-of-time-at-risk" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Calculation of time-at risk</h2>
-<p>The time-at-risk for patients who undergo anti-VEGF will be calculated as the periods of time when patients undergo monthly or bimonthly injections. In other words, a patient is considered no longer at risk once there is a &gt;90 days-gap in anti-VEGF administration. Anti-VEGF need typically decreases over time; however, some patients require lifelong VEGF suppression and the proportion of patients who require lifelong VEGF is likely different depending on the disease indication (e.g., DME/DR, versus AMD, versus VO).<span class="citation">[<a href="#ref-Gross_2018">25</a>]</span>, 28–30</p>
+<div id="data-analysis-plan" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Data Analysis Plan</h1>
+<div id="general" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> General</h2>
+<p>Although the primary aim of this study is a comparative safety study, various standardized analytics available in the OHDSI community will be applied. The Strategus pipeline will be used to call various packages in the HADES library for A) data characterization (A1-cohort diagnostics, A2-cohort features, A3-incidence rates, A4-time-to-event), B) patient-level prediction, and C) population-level effect estimation (C1-comparative cohort, C2-self-controlled case-series).​26,27​</p>
 </div>
-<div id="model-specificationanalysis" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> Model Specification/Analysis</h2>
-<p>Propensity score methods will be used to match/stratify patients in each target and comparator cohorts. Propensity score matched/stratified Cox proportional hazards models will be used to estimate the risk of kidney failure.31</p>
+<div id="a-data-characterization" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> A) Data Characterization</h2>
+<div id="a1-cohort-diagnostics" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> A1) Cohort Diagnostics</h3>
+<p>The R package CohortDiagnostics will be executed for all target, comparator, indication, and outcome cohorts to evaluate measurement error in the phenotype development and evaluation process.​28​</p>
 </div>
-<div id="sensitivity-analyses" class="section level2" number="9.3">
-<h2><span class="header-section-number">9.3</span> Sensitivity Analyses</h2>
-<p>Various sensitivity analyses will be performed. <span class="citation">[<a href="#ref-Martin_2018">1</a>]</span>) Multiple definitions of the cohort entry criteria will be used, specifically how 3 “monthly” anti-VEGF medications will be defined. For example, one definition could include a first anti-VEGF, followed by another anti-VEGF 4-8 weeks after the first one, and another anti-VEGF 8-16 weeks after the first one. Alternatively, the intervals of 0, 4-8, and 8-20 will be used. The least strict criteria will be the designation of ≥3 injections in the first 24 weeks. <span class="citation">[<a href="#ref-Steinmetz_2021">2</a>]</span>) The anti-VEGF injection treatment schedules are expected to differ among patients with the three ophthalmic diagnoses (DME/DR, versus AMD, versus VO). Therefore, we will estimate the risk differences within each diagnosis in addition to the joint analysis.</p>
+<div id="a2-cohort-features" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> A2) Cohort Features</h3>
+<p>The Characterization and FeatureExtraction packages in HADES will be used to identify features of patients in each exposure group who had the outcome and those who did not have the outcome.​27​ Features will be extracted from the 365 day observation prior to cohort entry and will include variables such as demographic data (sex, age group, race, ethnicity), prior conditions/drug exposures/procedures/measurements/devices/observations, and risk scors (e.g., Charlson comorbidity index, DCSI, CHADS2VASC score).</p>
+</div>
+<div id="a3-incidence-rates" class="section level3" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> A3) Incidence Rates</h3>
+<p>The Characterization package in HADES will be used to calculate the incidence rates of the outcome for each exposure cohort and indication cohort. The rate is calculated as the number of outcomes during the time-at-risk divided by the number of total person days.</p>
+<div id="calculation-of-time-at-risk" class="section level4" number="9.2.3.1">
+<h4><span class="header-section-number">9.2.3.1</span> Calculation of time-at risk</h4>
+<p>The time-at-risk for patients who undergo anti-VEGF starts after the third anti-VEGF injection until the end of the continuous drug exposure, defined as a gap in exposure of &gt;180 days, end of continuous observation period, or study period. Anti-VEGF need typically decreases over time; however, some patients require lifelong VEGF suppression and the proportion of patients who require lifelong VEGF is likely different depending on the disease indication (e.g., DME/DR, versus AMD, versus VO).​29–33​</p>
+<p>Incidence rates will be stratified by gender, age deciles, index year subgroups, and disease indication (DME/DR, AMD, VO).</p>
 </div>
 </div>
-<div id="sample-size" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Sample Size and Study Power</h1>
+<div id="a4-time-to-event" class="section level3" number="9.2.4">
+<h3><span class="header-section-number">9.2.4</span> A4) Time-to-Event</h3>
+<p>Time to the outcome of kidney failure will be calculated for each exposure cohorts and indication cohort.</p>
 </div>
-<div id="study-diagnostics" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> Study Diagnostics</h1>
+</div>
+<div id="b-patient-level-prediction" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> B) Patient-Level Prediction</h2>
+<p>The PatientLevelPrediction and Cyclops packages in HADES will be used to construct logistic regression models with LASSO regularization to predict the risk of kidney failure ??? months to ??? months after the initial 3 monthly intravitreal anti-VEGF medications.​34​ The model will be developed on 75% of the data and internally validated on the remaining 25%.</p>
+</div>
+<div id="c-population-level-effect-estimation" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> C) Population-Level Effect Estimation</h2>
+<div id="c1-comparative-cohort-study" class="section level3" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> C1) Comparative Cohort Study</h3>
+<p>The CohortMethod and Cyclops packages in Hades will be used.​27​ Large-scale propensity score method will be used to match the targe exposure cohort with the comparator export cohort (e.g., aflibercept versus ranibizumab, bevacizumab versus ranibizumab, and bevacizumab versus aflibercept) using 1:1 propensity score matching. Cox proportional hazards models will be used to estimate the risk of kidney failure while on treatment.​35​ Negative controls will be used to assess residual bias.</p>
+</div>
+<div id="c2-self-controlled-case-series" class="section level3" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> C2) Self-Controlled Case-Series</h3>
+<p>The SelfControlledCaseSeries and Cyclops packages in Hades will be used to estimate the relative incidence of kidney failure using a self-controlled case-series design.​27​ Diagnostics will be run to evaluate whether this was an appropriate analysis.</p>
+</div>
+</div>
+</div>
+<div id="study-diagnostics" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Study Diagnostics</h1>
 <ol style="list-style-type: decimal">
 <li>Preference score distributions to evaluate empirical equipoise and population generalizability</li>
 <li>Extensive patient characteristics to evaluate cohort balance before and after PS-adjustment</li>
@@ -3341,118 +3355,77 @@ Reason
 <li>Kaplan-Meier plots to examine hazard ratio proportionality assumptions</li>
 </ol>
 </div>
-<div id="strengths-limitations" class="section level1" number="12">
-<h1><span class="header-section-number">12</span> Strengths and Limitations</h1>
+<div id="strengths-limitations" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Strengths and Limitations</h1>
 <p>When executed, this will be the largest study examining the association between intravitreal anti-VEGF medications and kidney failure. Other strengths of this study include the diversity of the sample (from multiple institutions, multiple countries, and a range of underlying kidney impairment at baseline).</p>
 <p>Limitations are mainly due to the retrospective nature of the study which might have confounding despite propensity score matching and stratified analyses.</p>
 </div>
-<div id="protection-of-human-subjects" class="section level1" number="13">
-<h1><span class="header-section-number">13</span> Protection of Human Subjects</h1>
+<div id="protection-of-human-subjects" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Protection of Human Subjects</h1>
 <p>The JHM IRB has already approved this project (IRB00356149). Each participating institution will seek IRB approval for this study.</p>
 </div>
-<div id="management-and-reporting-of-adverse-events-and-adverse-reactions" class="section level1" number="14">
-<h1><span class="header-section-number">14</span> Management and Reporting of Adverse Events and Adverse Reactions</h1>
+<div id="management-and-reporting-of-adverse-events-and-adverse-reactions" class="section level1" number="13">
+<h1><span class="header-section-number">13</span> Management and Reporting of Adverse Events and Adverse Reactions</h1>
 <p>JHM will serve as the coordinating center for this OHDSI network study. All findings and adverse events/reactions will be reported to them.</p>
 </div>
-<div id="plans-for-disseminating-and-communicating-study-results" class="section level1" number="15">
-<h1><span class="header-section-number">15</span> Plans for Disseminating and Communicating Study Results</h1>
+<div id="plans-for-disseminating-and-communicating-study-results" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> Plans for Disseminating and Communicating Study Results</h1>
 <p>The results will be shared and discussed among the study participants and broader OHDSI community during the weekly Tuesday community calls throughout the SOS Challenge. This work will be presented at conferences (OHDSI Global Symposium and/or ARVO) and published as a manuscript.</p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
-<div id="refs" class="references csl-bib-body">
-<div id="ref-Martin_2018" class="csl-entry">
-<div class="csl-left-margin">1 </div><div class="csl-right-inline">Martin DF. Evolution of intravitreal therapy for retinal diseases<span></span>from <span>CMV</span> to <span>CNV</span>: The <span>LXXIV</span> edward jackson memorial lecture. <em>American Journal of Ophthalmology</em> 2018;<strong>191</strong>:xli–lviii. doi:<a href="https://doi.org/10.1016/j.ajo.2017.12.019">10.1016/j.ajo.2017.12.019</a></div>
-</div>
-<div id="ref-Steinmetz_2021" class="csl-entry">
-<div class="csl-left-margin">2 </div><div class="csl-right-inline">Steinmetz JD, Bourne RRA, Briant PS, <em>et al.</em> Causes of blindness and vision impairment in 2020 and trends over 30 years, and prevalence of avoidable blindness in relation to <span>VISION</span> 2020: The right to sight: An analysis for the global burden of disease study. <em>The Lancet Global Health</em> 2021;<strong>9</strong>:e144–60. doi:<a href="https://doi.org/10.1016/s2214-109x(20)30489-7">10.1016/s2214-109x(20)30489-7</a></div>
-</div>
-<div id="ref-Hanna_2019" class="csl-entry">
-<div class="csl-left-margin">3 </div><div class="csl-right-inline">Hanna RM, Barsoum M, Arman F, <em>et al.</em> Nephrotoxicity induced by intravitreal vascular endothelial growth factor inhibitors: Emerging evidence. <em>Kidney International</em> 2019;<strong>96</strong>:572–80. doi:<a href="https://doi.org/10.1016/j.kint.2019.02.042">10.1016/j.kint.2019.02.042</a></div>
-</div>
-<div id="ref-Gurevich_2009" class="csl-entry">
-<div class="csl-left-margin">4 </div><div class="csl-right-inline">Gurevich F, Perazella MA. Renal effects of anti-angiogenesis therapy: Update for the internist. <em>The American Journal of Medicine</em> 2009;<strong>122</strong>:322–8. doi:<a href="https://doi.org/10.1016/j.amjmed.2008.11.025">10.1016/j.amjmed.2008.11.025</a></div>
-</div>
-<div id="ref-Izzedine_2014" class="csl-entry">
-<div class="csl-left-margin">5 </div><div class="csl-right-inline">Izzedine H, Escudier B, Lhomme C, <em>et al.</em> Kidney diseases associated with anti-vascular endothelial growth factor (<span>VEGF</span>). <em>Medicine</em> 2014;<strong>93</strong>:333–9. doi:<a href="https://doi.org/10.1097/md.0000000000000207">10.1097/md.0000000000000207</a></div>
-</div>
-<div id="ref-Levey_2007" class="csl-entry">
-<div class="csl-left-margin">6 </div><div class="csl-right-inline">Levey AS, Atkins R, Coresh J, <em>et al.</em> Chronic kidney disease as a global public health problem: Approaches and initiatives <span></span> a position statement from kidney disease improving global outcomes. <em>Kidney International</em> 2007;<strong>72</strong>:247–59. doi:<a href="https://doi.org/10.1038/sj.ki.5002343">10.1038/sj.ki.5002343</a></div>
-</div>
-<div id="ref-Bikbov_2020" class="csl-entry">
-<div class="csl-left-margin">7 </div><div class="csl-right-inline">Bikbov B, Purcell CA, Levey AS, <em>et al.</em> Global, regional, and national burden of chronic kidney disease, 1990<span></span>2017: A systematic analysis for the global burden of disease study 2017. <em>The Lancet</em> 2020;<strong>395</strong>:709–33. doi:<a href="https://doi.org/10.1016/s0140-6736(20)30045-3">10.1016/s0140-6736(20)30045-3</a></div>
-</div>
-<div id="ref-Avery_2014" class="csl-entry">
-<div class="csl-left-margin">8 </div><div class="csl-right-inline">Avery RL, Castellarin AA, Steinle NC, <em>et al.</em> Systemic pharmacokinetics following intravitreal injections of ranibizumab, bevacizumab or aflibercept in patients with neovascular <span>AMD</span>. <em>British Journal of Ophthalmology</em> 2014;<strong>98</strong>:1636–41. doi:<a href="https://doi.org/10.1136/bjophthalmol-2014-305252">10.1136/bjophthalmol-2014-305252</a></div>
-</div>
-<div id="ref-Avery_2017" class="csl-entry">
-<div class="csl-left-margin">9 </div><div class="csl-right-inline">Avery RL, Castellarin AA, Steinle NC, <em>et al.</em> <span>SYSTEMIC</span> <span>PHARMACOKINETICS</span> <span>AND</span> <span>PHARMACODYNAMICS</span> <span>OF</span> <span>INTRAVITREAL</span> <span>AFLIBERCEPT</span>, <span>BEVACIZUMAB</span>, <span>AND</span> <span>RANIBIZUMAB</span>. <em>Retina</em> 2017;<strong>37</strong>:1847–58. doi:<a href="https://doi.org/10.1097/iae.0000000000001493">10.1097/iae.0000000000001493</a></div>
-</div>
-<div id="ref-Cheungpasitporn_2015" class="csl-entry">
-<div class="csl-left-margin">10 </div><div class="csl-right-inline">Cheungpasitporn W, Chebib FT, Cornell LD, <em>et al.</em> Intravitreal antivascular endothelial growth factor therapy may induce proteinuria and antibody mediated injury in renal allografts. <em>Transplantation</em> 2015;<strong>99</strong>:2382–6. doi:<a href="https://doi.org/10.1097/tp.0000000000000750">10.1097/tp.0000000000000750</a></div>
-</div>
-<div id="ref-Morales_2017" class="csl-entry">
-<div class="csl-left-margin">11 </div><div class="csl-right-inline">Morales E, Moliz C, Gutierrez E. Renal damage associated to intravitreal administration of ranibizumab. <em>Nefrolog<span>ı́</span>a (English Edition)</em> 2017;<strong>37</strong>:653–5. doi:<a href="https://doi.org/10.1016/j.nefroe.2017.10.007">10.1016/j.nefroe.2017.10.007</a></div>
-</div>
-<div id="ref-Shye_2020" class="csl-entry">
-<div class="csl-left-margin">12 </div><div class="csl-right-inline">Shye M, Hanna RM, Patel SS, <em>et al.</em> Worsening proteinuria and renal function after intravitreal vascular endothelial growth factor blockade for diabetic proliferative retinopathy. <em>Clinical Kidney Journal</em> 2020;<strong>13</strong>:969–80. doi:<a href="https://doi.org/10.1093/ckj/sfaa049">10.1093/ckj/sfaa049</a></div>
-</div>
-<div id="ref-Kameda_2018" class="csl-entry">
-<div class="csl-left-margin">13 </div><div class="csl-right-inline">Kameda Y, Babazono T, Uchigata Y, <em>et al.</em> Renal function after intravitreal administration of vascular endothelial growth factor inhibitors in patients with diabetes and chronic kidney disease. <em>Journal of Diabetes Investigation</em> 2018;<strong>9</strong>:937–9. doi:<a href="https://doi.org/10.1111/jdi.12771">10.1111/jdi.12771</a></div>
-</div>
-<div id="ref-O_Neill_2019" class="csl-entry">
-<div class="csl-left-margin">14 </div><div class="csl-right-inline">O’Neill RA, Gallagher P, Douglas T, <em>et al.</em> Evaluation of long-term intravitreal anti-vascular endothelial growth factor injections on renal function in patients with and without diabetic kidney disease. <em><span>BMC</span> Nephrology</em> 2019;<strong>20</strong>. doi:<a href="https://doi.org/10.1186/s12882-019-1650-1">10.1186/s12882-019-1650-1</a></div>
-</div>
-<div id="ref-Glassman_2018" class="csl-entry">
-<div class="csl-left-margin">15 </div><div class="csl-right-inline">Glassman AR, Liu D, Jampol LM, <em>et al.</em> Changes in blood pressure and urine albumin-creatinine ratio in a randomized clinical trial comparing aflibercept, bevacizumab, and ranibizumab for diabetic macular edema. <em>Investigative Opthalmology <span>&amp;</span>Amp<span class="math inline">\(\mathsemicolon\)</span> Visual Science</em> 2018;<strong>59</strong>:1199. doi:<a href="https://doi.org/10.1167/iovs.17-22853">10.1167/iovs.17-22853</a></div>
-</div>
-<div id="ref-Flaxel_2020" class="csl-entry">
-<div class="csl-left-margin">16 </div><div class="csl-right-inline">Flaxel CJ, Adelman RA, Bailey ST, <em>et al.</em> Diabetic retinopathy preferred practice pattern<span></span>. <em>Ophthalmology</em> 2020;<strong>127</strong>:P66–145. doi:<a href="https://doi.org/10.1016/j.ophtha.2019.09.025">10.1016/j.ophtha.2019.09.025</a></div>
-</div>
-<div id="ref-2015" class="csl-entry">
-<div class="csl-left-margin">17 </div><div class="csl-right-inline">Aflibercept, bevacizumab, or ranibizumab for diabetic macular edema. <em>New England Journal of Medicine</em> 2015;<strong>372</strong>:1193–203. doi:<a href="https://doi.org/10.1056/nejmoa1414264">10.1056/nejmoa1414264</a></div>
-</div>
-<div id="ref-Aiello_2011" class="csl-entry">
-<div class="csl-left-margin">18 </div><div class="csl-right-inline">Aiello LP, Beck RW, Bressler NM, <em>et al.</em> Rationale for the diabetic retinopathy clinical research network treatment protocol for center-involved diabetic macular edema. <em>Ophthalmology</em> 2011;<strong>118</strong>:e5–14. doi:<a href="https://doi.org/10.1016/j.ophtha.2011.09.058">10.1016/j.ophtha.2011.09.058</a></div>
-</div>
-<div id="ref-2011" class="csl-entry">
-<div class="csl-left-margin">19 </div><div class="csl-right-inline">Ranibizumab and bevacizumab for neovascular age-related macular degeneration. <em>New England Journal of Medicine</em> 2011;<strong>364</strong>:1897–908. doi:<a href="https://doi.org/10.1056/nejmoa1102673">10.1056/nejmoa1102673</a></div>
-</div>
-<div id="ref-Kertes_2019" class="csl-entry">
-<div class="csl-left-margin">20 </div><div class="csl-right-inline">Kertes PJ, Galic IJ, Greve M, <em>et al.</em> Canadian treat-and-extend analysis trial with ranibizumab in patients with neovascular age-related macular disease. <em>Ophthalmology</em> 2019;<strong>126</strong>:841–8. doi:<a href="https://doi.org/10.1016/j.ophtha.2019.01.013">10.1016/j.ophtha.2019.01.013</a></div>
-</div>
-<div id="ref-Norton_2019" class="csl-entry">
-<div class="csl-left-margin">21 </div><div class="csl-right-inline">Norton JM, Ali K, Jurkovitz CT, <em>et al.</em> Development and validation of a pragmatic electronic phenotype for <span>CKD</span>. <em>Clinical Journal of the American Society of Nephrology</em> 2019;<strong>14</strong>:1306–14. doi:<a href="https://doi.org/10.2215/cjn.00360119">10.2215/cjn.00360119</a></div>
-</div>
-<div id="ref-Tian_2018" class="csl-entry">
-<div class="csl-left-margin">22 </div><div class="csl-right-inline">Tian Y, Schuemie MJ, Suchard MA. Evaluating large-scale propensity score performance through real-world and synthetic data experiments. <em>International Journal of Epidemiology</em> 2018;<strong>47</strong>:2005–14. doi:<a href="https://doi.org/10.1093/ije/dyy120">10.1093/ije/dyy120</a></div>
-</div>
-<div id="ref-Perazella_2018" class="csl-entry">
-<div class="csl-left-margin">23 </div><div class="csl-right-inline">Perazella MA. Pharmacology behind common drug nephrotoxicities. <em>Clinical Journal of the American Society of Nephrology</em> 2018;<strong>13</strong>:1897–908. doi:<a href="https://doi.org/10.2215/cjn.00150118">10.2215/cjn.00150118</a></div>
-</div>
-<div id="ref-Wells_2016" class="csl-entry">
-<div class="csl-left-margin">24 </div><div class="csl-right-inline">Wells JA, Glassman AR, Ayala AR, <em>et al.</em> Aflibercept, bevacizumab, or ranibizumab for diabetic macular edema. <em>Ophthalmology</em> 2016;<strong>123</strong>:1351–9. doi:<a href="https://doi.org/10.1016/j.ophtha.2016.02.022">10.1016/j.ophtha.2016.02.022</a></div>
-</div>
-<div id="ref-Gross_2018" class="csl-entry">
-<div class="csl-left-margin">25 </div><div class="csl-right-inline">Gross JG, Glassman AR, Liu D, <em>et al.</em> Five-year outcomes of panretinal photocoagulation vs intravitreous ranibizumab for proliferative diabetic retinopathy. <em><span>JAMA</span> Ophthalmology</em> 2018;<strong>136</strong>:1138. doi:<a href="https://doi.org/10.1001/jamaophthalmol.2018.3255">10.1001/jamaophthalmol.2018.3255</a></div>
-</div>
-</div>
+<!-- <div id="refs"></div> -->
+<p>​1. Martin DF. Evolution of Intravitreal Therapy for Retinal Diseases—From CMV to CNV: The LXXIV Edward Jackson Memorial Lecture. Am J Ophthalmol. 2018;191:xli-lviii. <a href="doi:10.1016/j.ajo.2017.12.019" class="uri">doi:10.1016/j.ajo.2017.12.019</a></p>
+<p>​2. Collaborators G 2019 B and VI, Adelson JD, Bourne RRA, et al. Causes of blindness and vision impairment in 2020 and trends over 30 years, and prevalence of avoidable blindness in relation to VISION 2020: the Right to Sight: an analysis for the Global Burden of Disease Study. Lancet Global Heal. 2021;9(2):e144-e160. <a href="doi:10.1016/s2214-109x(20)30489-7" class="uri">doi:10.1016/s2214-109x(20)30489-7</a></p>
+<p>​3. Hanna RM, Barsoum M, Arman F, Selamet U, Hasnain H, Kurtz I. Nephrotoxicity Induced by Intravitreal Vascular Endothelial Growth Factor (VEGF) inhibitors: Emerging Evidence. Kidney Int. 2019;96(3):572-580. <a href="doi:10.1016/j.kint.2019.02.042" class="uri">doi:10.1016/j.kint.2019.02.042</a></p>
+<p>​4. Gurevich F, Perazella MA. Renal Effects of Anti-angiogenesis Therapy: Update for the Internist. Am J Medicine. 2009;122(4):322-328. <a href="doi:10.1016/j.amjmed.2008.11.025" class="uri">doi:10.1016/j.amjmed.2008.11.025</a></p>
+<p>​5. Izzedine H, Escudier B, Lhomme C, et al. Kidney Diseases Associated With Anti-Vascular Endothelial Growth Factor (VEGF). Medicine. 2014;93(24):333-339. <a href="doi:10.1097/md.0000000000000207" class="uri">doi:10.1097/md.0000000000000207</a></p>
+<p>​6. Levey AS, Atkins R, Coresh J, et al. Chronic kidney disease as a global public health problem: Approaches and initiatives – a position statement from Kidney Disease Improving Global Outcomes. Kidney Int. 2007;72(3):247-259. <a href="doi:10.1038/sj.ki.5002343" class="uri">doi:10.1038/sj.ki.5002343</a></p>
+<p>​7. Collaboration GCKD, Bikbov B, Purcell CA, et al. Global, regional, and national burden of chronic kidney disease, 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017. Lancet. 2020;395(10225):709-733. <a href="doi:10.1016/s0140-6736(20)30045-3" class="uri">doi:10.1016/s0140-6736(20)30045-3</a></p>
+<p>​8. Avery RL, Castellarin AA, Steinle NC, et al. Systemic pharmacokinetics following intravitreal injections of ranibizumab, bevacizumab or aflibercept in patients with neovascular AMD. Brit J Ophthalmol. 2014;98(12):1636. <a href="doi:10.1136/bjophthalmol-2014-305252" class="uri">doi:10.1136/bjophthalmol-2014-305252</a></p>
+<p>​9. Avery RL, Castellarin AA, Steinle NC, et al. SYSTEMIC PHARMACOKINETICS AND PHARMACODYNAMICS OF INTRAVITREAL AFLIBERCEPT, BEVACIZUMAB, AND RANIBIZUMAB. Retin. 2017;37(10):1847-1858. <a href="doi:10.1097/iae.0000000000001493" class="uri">doi:10.1097/iae.0000000000001493</a></p>
+<p>​10. Cheungpasitporn W, Chebib FT, Cornell LD, et al. Intravitreal Antivascular Endothelial Growth Factor Therapy May Induce Proteinuria and Antibody Mediated Injury in Renal Allografts. Transplantation. 2015;99(11):2382-2386. <a href="doi:10.1097/tp.0000000000000750" class="uri">doi:10.1097/tp.0000000000000750</a></p>
+<p>​11. Morales E, Moliz C, Gutierrez E. Renal damage associated to intravitreal administration of ranibizumab. Nefrología Engl Ed. 2017;37(6):653-655. <a href="doi:10.1016/j.nefroe.2017.10.007" class="uri">doi:10.1016/j.nefroe.2017.10.007</a></p>
+<p>​12. Shye M, Hanna RM, Patel SS, et al. Worsening proteinuria and renal function after intravitreal vascular endothelial growth factor blockade for diabetic proliferative retinopathy. Clin Kidney J. 2020;13(6):sfaa049-. <a href="doi:10.1093/ckj/sfaa049" class="uri">doi:10.1093/ckj/sfaa049</a></p>
+<p>​13. Kameda Y, Babazono T, Uchigata Y, Kitano S. Renal function after intravitreal administration of vascular endothelial growth factor inhibitors in patients with diabetes and chronic kidney disease. J Diabetes Invest. 2018;9(4):937-939. <a href="doi:10.1111/jdi.12771" class="uri">doi:10.1111/jdi.12771</a></p>
+<p>​14. O’Neill RA, Gallagher P, Douglas T, et al. Evaluation of long-term intravitreal anti-vascular endothelial growth factor injections on renal function in patients with and without diabetic kidney disease. Bmc Nephrol. 2019;20(1):478. <a href="doi:10.1186/s12882-019-1650-1" class="uri">doi:10.1186/s12882-019-1650-1</a></p>
+<p>​15. Glassman AR, Liu D, Jampol LM, Sun JK, Network DRCR. Changes in Blood Pressure and Urine Albumin-Creatinine Ratio in a Randomized Clinical Trial Comparing Aflibercept, Bevacizumab, and Ranibizumab for Diabetic Macular Edema. Invest Ophth Vis Sci. 2018;59(3):1199-1205. <a href="doi:10.1167/iovs.17-22853" class="uri">doi:10.1167/iovs.17-22853</a></p>
+<p>​16. Flaxel CJ, Adelman RA, Bailey ST, et al. Age-Related Macular Degeneration Preferred Practice Pattern®. Ophthalmology. 2020;127(1):P1-P65. <a href="doi:10.1016/j.ophtha.2019.09.024" class="uri">doi:10.1016/j.ophtha.2019.09.024</a></p>
+<p>​17. Flaxel CJ, Adelman RA, Bailey ST, et al. Diabetic Retinopathy Preferred Practice Pattern®. Ophthalmology. 2020;127(1):P66-P145. <a href="doi:10.1016/j.ophtha.2019.09.025" class="uri">doi:10.1016/j.ophtha.2019.09.025</a></p>
+<p>​18. Network DRCR, Wells JA, Glassman AR, et al. Aflibercept, Bevacizumab, or Ranibizumab for Diabetic Macular Edema. New Engl J Medicine. 2015;372(13):1193-1203. <a href="doi:10.1056/nejmoa1414264" class="uri">doi:10.1056/nejmoa1414264</a></p>
+<p>​19. Flaxel CJ, Adelman RA, Bailey ST, et al. Retinal Vein Occlusions Preferred Practice Pattern®. Ophthalmology. 2020;127(2):P288-P320. <a href="doi:10.1016/j.ophtha.2019.09.029" class="uri">doi:10.1016/j.ophtha.2019.09.029</a></p>
+<p>​20. Aiello LP, Beck RW, Bressler NM, et al. Rationale for the Diabetic Retinopathy Clinical Research Network Treatment Protocol for Center-Involved Diabetic Macular Edema. Ophthalmology. 2011;118(12):e5-e14. <a href="doi:10.1016/j.ophtha.2011.09.058" class="uri">doi:10.1016/j.ophtha.2011.09.058</a></p>
+<p>​21. Group CR, Martin DF, Maguire MG, et al. Ranibizumab and Bevacizumab for Neovascular Age-Related Macular Degeneration. New Engl J Medicine. 2011;364(20):1897-1908. <a href="doi:10.1056/nejmoa1102673" class="uri">doi:10.1056/nejmoa1102673</a></p>
+<p>​22. Kertes PJ, Galic IJ, Greve M, et al. Canadian Treat-and-Extend Analysis Trial with Ranibizumab in Patients with Neovascular Age-Related Macular Disease: One-Year Results of the Randomized Canadian Treat-and-Extend Analysis Trial with Ranibizumab Study. Ophthalmology. 2019;126(6):841-848. <a href="doi:10.1016/j.ophtha.2019.01.013" class="uri">doi:10.1016/j.ophtha.2019.01.013</a></p>
+<p>​23. Norton JM, Ali K, Jurkovitz CT, et al. Development and Validation of a Pragmatic Electronic Phenotype for CKD. Clin J Am Soc Nephro. 2019;14(9):1306-1314. <a href="doi:10.2215/cjn.00360119" class="uri">doi:10.2215/cjn.00360119</a></p>
+<p>​24. Ostropolets A, Reich C, Ryan P, Shang N, Hripcsak G, Weng C. Adapting electronic health records-derived phenotypes to claims data: Lessons learned in using limited clinical data for phenotyping. J Biomed Inform. 2020;102:103363. <a href="doi:10.1016/j.jbi.2019.103363" class="uri">doi:10.1016/j.jbi.2019.103363</a></p>
+<p>​25. Tian Y, Schuemie MJ, Suchard MA. Evaluating large-scale propensity score performance through real-world and synthetic data experiments. Int J Epidemiol. 2018;47(6):2005-2014. <a href="doi:10.1093/ije/dyy120" class="uri">doi:10.1093/ije/dyy120</a></p>
+<p>​26. Strategus. Accessed April 29, 2023. <a href="https://github.com/OHDSI/Strategus" class="uri">https://github.com/OHDSI/Strategus</a></p>
+<p>​27. HADES. Accessed April 29, 2023. <a href="https://ohdsi.github.io/Hades/index.html" class="uri">https://ohdsi.github.io/Hades/index.html</a></p>
+<p>​28. CohortDiagnostics. Accessed April 29, 2023. <a href="https://ohdsi.github.io/CohortDiagnostics/" class="uri">https://ohdsi.github.io/CohortDiagnostics/</a></p>
+<p>​29. Wells JA, Glassman AR, Ayala AR, et al. Aflibercept, Bevacizumab, or Ranibizumab for Diabetic Macular Edema Two-Year Results from a Comparative Effectiveness Randomized Clinical Trial. Ophthalmology. 2016;123(6):1351-1359. <a href="doi:10.1016/j.ophtha.2016.02.022" class="uri">doi:10.1016/j.ophtha.2016.02.022</a></p>
+<p>​30. Gross JG, Glassman AR, Liu D, et al. Five-Year Outcomes of Panretinal Photocoagulation vs Intravitreous Ranibizumab for Proliferative Diabetic Retinopathy: A Randomized Clinical Trial. Jama Ophthalmol. 2018;136(10):1138. <a href="doi:10.1001/jamaophthalmol.2018.3255" class="uri">doi:10.1001/jamaophthalmol.2018.3255</a></p>
+<p>​31. Group C of A related MDTT (CATT) R, Committee: W, Martin DF, et al. Ranibizumab and Bevacizumab for Treatment of Neovascular Age-related Macular Degeneration Two-Year Results. Ophthalmology. 2012;119(7):1388-1398. <a href="doi:10.1016/j.ophtha.2012.03.053" class="uri">doi:10.1016/j.ophtha.2012.03.053</a></p>
+<p>​32. Cao X, Sanchez JC, Dinabandhu A, et al. Aqueous proteins help predict the response of neovascular age-related macular degeneration patients to anti-VEGF therapy. J Clin Invest. Published online 2021. <a href="doi:10.1172/jci144469" class="uri">doi:10.1172/jci144469</a></p>
+<p>​33. Heier JS, Campochiaro PA, Yau L, et al. Ranibizumab for Macular Edema Due to Retinal Vein Occlusions Long-term Follow-up in the HORIZON Trial. Ophthalmology. 2012;119(4):802-809. <a href="doi:10.1016/j.ophtha.2011.12.005" class="uri">doi:10.1016/j.ophtha.2011.12.005</a></p>
+<p>​34. Reps JM, Schuemie MJ, Suchard MA, Ryan PB, Rijnbeek PR. Design and implementation of a standardized framework to generate and evaluate patient-level prediction models using observational healthcare data. J Am Med Inform Assn. 2018;25(8):969-975. <a href="doi:10.1093/jamia/ocy032" class="uri">doi:10.1093/jamia/ocy032</a></p>
+<p>​35. Cox DR. Regression Models and Life‐Tables. J Royal Statistical Soc Ser B Methodol. 1972;34(2):187-202. <a href="doi:10.1111/j.2517-6161.1972.tb00899.x" class="uri">doi:10.1111/j.2517-6161.1972.tb00899.x</a></p>
 </div>
 <div id="appendix-appendix" class="section level1 unnumbered">
 <h1>Appendix</h1>
 </div>
-<div id="exposure-cohort-definitions" class="section level1" number="16">
+<div id="exposure-cohort-definitions" class="section level1" number="15">
 <h1><span class="header-section-number">A</span> Exposure Cohort Definitions</h1>
-<div id="ranibizumab-exposures-after-new-use-with-3-exposures-in-21-70d-windows" class="section level2" number="16.1">
+<div id="ranibizumab-exposures-after-new-use-with-3-exposures-in-21-70d-windows" class="section level2" number="15.1">
 <h2><span class="header-section-number">A.1</span> Ranibizumab exposures after new use with 3 exposures in 21-70d windows</h2>
-<div id="cohort-entry-events" class="section level3" number="16.1.1">
+<div id="cohort-entry-events" class="section level3" number="15.1.1">
 <h3><span class="header-section-number">A.1.1</span> Cohort Entry Events</h3>
 <p>People may enter the cohort when observing any of the following:</p>
 <ol style="list-style-type: decimal">
 <li>drug exposures of ‘[SOS] ranibizumab’.</li>
 </ol>
 </div>
-<div id="additional-inclusion-criteria" class="section level3" number="16.1.2">
+<div id="additional-inclusion-criteria" class="section level3" number="15.1.2">
 <h3><span class="header-section-number">A.1.2</span> Additional Inclusion Criteria</h3>
 <div id="i.-has-at-least-1-prior-exposure-with-2-or-more-prior-exposures-in-21-70d-with-blinding-disease-and-no-other-cancer-and-365d-before-first" class="section level4 unnumbered">
 <h4>I. has at least 1 prior exposure with 2 or more prior exposures in 21-70d with blinding disease and no other cancer and 365d before first</h4>
@@ -3471,7 +3444,7 @@ Reason
 </ol>
 </div>
 </div>
-<div id="cohort-exit" class="section level3" number="16.1.3">
+<div id="cohort-exit" class="section level3" number="15.1.3">
 <h3><span class="header-section-number">A.1.3</span> Cohort Exit</h3>
 <p>The cohort end date will be based on a continuous exposure to ‘[SOS] ranibizumab’:
 allowing 180 days between exposures, adding 0 days after exposure ends, and using days supply and exposure end date for exposure duration.</p>
@@ -3481,11 +3454,11 @@ allowing 180 days between exposures, adding 0 days after exposure ends, and usin
 <li>drug exposures of ‘[SOS] bevacizumab’.</li>
 </ol>
 </div>
-<div id="cohort-eras" class="section level3" number="16.1.4">
+<div id="cohort-eras" class="section level3" number="15.1.4">
 <h3><span class="header-section-number">A.1.4</span> Cohort Eras</h3>
 <p>Entry events will be combined into cohort eras if they are within 0 days of each other.</p>
 </div>
-<div id="concept-sos-age-related-macular-degeneration" class="section level3" number="16.1.5">
+<div id="concept-sos-age-related-macular-degeneration" class="section level3" number="15.1.5">
 <h3><span class="header-section-number">A.1.5</span> Concept: [SOS] Age related Macular Degeneration</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -3563,7 +3536,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-diabetic-retinopathy" class="section level3" number="16.1.6">
+<div id="concept-sos-diabetic-retinopathy" class="section level3" number="15.1.6">
 <h3><span class="header-section-number">A.1.6</span> Concept: [SOS] Diabetic retinopathy</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -3618,7 +3591,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-macular-edema" class="section level3" number="16.1.7">
+<div id="concept-sos-macular-edema" class="section level3" number="15.1.7">
 <h3><span class="header-section-number">A.1.7</span> Concept: [SOS] Macular edema</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -3696,7 +3669,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-retinal-vein-occlusion" class="section level3" number="16.1.8">
+<div id="concept-sos-retinal-vein-occlusion" class="section level3" number="15.1.8">
 <h3><span class="header-section-number">A.1.8</span> Concept: [SOS] Retinal Vein Occlusion</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -3820,7 +3793,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-aflibercept-ranibizumab-and-bevacizumab" class="section level3" number="16.1.9">
+<div id="concept-sos-aflibercept-ranibizumab-and-bevacizumab" class="section level3" number="15.1.9">
 <h3><span class="header-section-number">A.1.9</span> Concept: [SOS] aflibercept ranibizumab and bevacizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -3921,7 +3894,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-malignant-neoplasms-excluding-non-melanoma-skin-cancer" class="section level3" number="16.1.10">
+<div id="concept-sos-malignant-neoplasms-excluding-non-melanoma-skin-cancer" class="section level3" number="15.1.10">
 <h3><span class="header-section-number">A.1.10</span> Concept: [SOS] Malignant neoplasms excluding non-melanoma skin cancer</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4022,7 +3995,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-ranibizumab" class="section level3" number="16.1.11">
+<div id="concept-sos-ranibizumab" class="section level3" number="15.1.11">
 <h3><span class="header-section-number">A.1.11</span> Concept: [SOS] ranibizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4077,7 +4050,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-aflibercept" class="section level3" number="16.1.12">
+<div id="concept-sos-aflibercept" class="section level3" number="15.1.12">
 <h3><span class="header-section-number">A.1.12</span> Concept: [SOS] aflibercept</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4132,7 +4105,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-bevacizumab" class="section level3" number="16.1.13">
+<div id="concept-sos-bevacizumab" class="section level3" number="15.1.13">
 <h3><span class="header-section-number">A.1.13</span> Concept: [SOS] bevacizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4190,16 +4163,16 @@ NO
 </hr>
 </div>
 </div>
-<div id="bevacizumab-exposures-after-new-use-with-3-exposures-in-21-70d-windows" class="section level2" number="16.2">
+<div id="bevacizumab-exposures-after-new-use-with-3-exposures-in-21-70d-windows" class="section level2" number="15.2">
 <h2><span class="header-section-number">A.2</span> Bevacizumab exposures after new use with 3 exposures in 21-70d windows</h2>
-<div id="cohort-entry-events-1" class="section level3" number="16.2.1">
+<div id="cohort-entry-events-1" class="section level3" number="15.2.1">
 <h3><span class="header-section-number">A.2.1</span> Cohort Entry Events</h3>
 <p>People may enter the cohort when observing any of the following:</p>
 <ol style="list-style-type: decimal">
 <li>drug exposures of ‘[SOS] bevacizumab’.</li>
 </ol>
 </div>
-<div id="additional-inclusion-criteria-1" class="section level3" number="16.2.2">
+<div id="additional-inclusion-criteria-1" class="section level3" number="15.2.2">
 <h3><span class="header-section-number">A.2.2</span> Additional Inclusion Criteria</h3>
 <div id="i.-has-at-least-1-prior-exposure-with-2-or-more-prior-exposures-in-21-70d-with-blinding-disease-and-no-other-cancer-and-365d-before-first-1" class="section level4 unnumbered">
 <h4>I. has at least 1 prior exposure with 2 or more prior exposures in 21-70d with blinding disease and no other cancer and 365d before first</h4>
@@ -4218,7 +4191,7 @@ NO
 </ol>
 </div>
 </div>
-<div id="cohort-exit-1" class="section level3" number="16.2.3">
+<div id="cohort-exit-1" class="section level3" number="15.2.3">
 <h3><span class="header-section-number">A.2.3</span> Cohort Exit</h3>
 <p>The cohort end date will be based on a continuous exposure to ‘[SOS] bevacizumab’:
 allowing 180 days between exposures, adding 0 days after exposure ends, and using days supply and exposure end date for exposure duration.</p>
@@ -4228,11 +4201,11 @@ allowing 180 days between exposures, adding 0 days after exposure ends, and usin
 <li>drug exposures of ‘[SOS] ranibizumab’.</li>
 </ol>
 </div>
-<div id="cohort-eras-1" class="section level3" number="16.2.4">
+<div id="cohort-eras-1" class="section level3" number="15.2.4">
 <h3><span class="header-section-number">A.2.4</span> Cohort Eras</h3>
 <p>Entry events will be combined into cohort eras if they are within 0 days of each other.</p>
 </div>
-<div id="concept-sos-age-related-macular-degeneration-1" class="section level3" number="16.2.5">
+<div id="concept-sos-age-related-macular-degeneration-1" class="section level3" number="15.2.5">
 <h3><span class="header-section-number">A.2.5</span> Concept: [SOS] Age related Macular Degeneration</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4310,7 +4283,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-diabetic-retinopathy-1" class="section level3" number="16.2.6">
+<div id="concept-sos-diabetic-retinopathy-1" class="section level3" number="15.2.6">
 <h3><span class="header-section-number">A.2.6</span> Concept: [SOS] Diabetic retinopathy</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4365,7 +4338,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-macular-edema-1" class="section level3" number="16.2.7">
+<div id="concept-sos-macular-edema-1" class="section level3" number="15.2.7">
 <h3><span class="header-section-number">A.2.7</span> Concept: [SOS] Macular edema</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4443,7 +4416,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-retinal-vein-occlusion-1" class="section level3" number="16.2.8">
+<div id="concept-sos-retinal-vein-occlusion-1" class="section level3" number="15.2.8">
 <h3><span class="header-section-number">A.2.8</span> Concept: [SOS] Retinal Vein Occlusion</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4567,7 +4540,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-aflibercept-ranibizumab-and-bevacizumab-1" class="section level3" number="16.2.9">
+<div id="concept-sos-aflibercept-ranibizumab-and-bevacizumab-1" class="section level3" number="15.2.9">
 <h3><span class="header-section-number">A.2.9</span> Concept: [SOS] aflibercept ranibizumab and bevacizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4668,7 +4641,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-malignant-neoplasms-excluding-non-melanoma-skin-cancer-1" class="section level3" number="16.2.10">
+<div id="concept-sos-malignant-neoplasms-excluding-non-melanoma-skin-cancer-1" class="section level3" number="15.2.10">
 <h3><span class="header-section-number">A.2.10</span> Concept: [SOS] Malignant neoplasms excluding non-melanoma skin cancer</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4769,7 +4742,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-bevacizumab-1" class="section level3" number="16.2.11">
+<div id="concept-sos-bevacizumab-1" class="section level3" number="15.2.11">
 <h3><span class="header-section-number">A.2.11</span> Concept: [SOS] bevacizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4824,7 +4797,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-aflibercept-1" class="section level3" number="16.2.12">
+<div id="concept-sos-aflibercept-1" class="section level3" number="15.2.12">
 <h3><span class="header-section-number">A.2.12</span> Concept: [SOS] aflibercept</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4879,7 +4852,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-ranibizumab-1" class="section level3" number="16.2.13">
+<div id="concept-sos-ranibizumab-1" class="section level3" number="15.2.13">
 <h3><span class="header-section-number">A.2.13</span> Concept: [SOS] ranibizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -4937,16 +4910,16 @@ NO
 </hr>
 </div>
 </div>
-<div id="aflibercept-exposures-after-new-use-with-3-exposures-in-21-70d-windows" class="section level2" number="16.3">
+<div id="aflibercept-exposures-after-new-use-with-3-exposures-in-21-70d-windows" class="section level2" number="15.3">
 <h2><span class="header-section-number">A.3</span> Aflibercept exposures after new use with 3 exposures in 21-70d windows</h2>
-<div id="cohort-entry-events-2" class="section level3" number="16.3.1">
+<div id="cohort-entry-events-2" class="section level3" number="15.3.1">
 <h3><span class="header-section-number">A.3.1</span> Cohort Entry Events</h3>
 <p>People may enter the cohort when observing any of the following:</p>
 <ol style="list-style-type: decimal">
 <li>drug exposures of ‘[SOS] aflibercept’.</li>
 </ol>
 </div>
-<div id="additional-inclusion-criteria-2" class="section level3" number="16.3.2">
+<div id="additional-inclusion-criteria-2" class="section level3" number="15.3.2">
 <h3><span class="header-section-number">A.3.2</span> Additional Inclusion Criteria</h3>
 <div id="i.-has-at-least-1-prior-exposure-with-2-or-more-prior-exposures-in-21-70d-with-blinding-disease-and-no-other-cancer-and-365d-before-first-2" class="section level4 unnumbered">
 <h4>I. has at least 1 prior exposure with 2 or more prior exposures in 21-70d with blinding disease and no other cancer and 365d before first</h4>
@@ -4965,7 +4938,7 @@ NO
 </ol>
 </div>
 </div>
-<div id="cohort-exit-2" class="section level3" number="16.3.3">
+<div id="cohort-exit-2" class="section level3" number="15.3.3">
 <h3><span class="header-section-number">A.3.3</span> Cohort Exit</h3>
 <p>The cohort end date will be based on a continuous exposure to ‘[SOS] aflibercept’:
 allowing 180 days between exposures, adding 0 days after exposure ends, and using days supply and exposure end date for exposure duration.</p>
@@ -4975,11 +4948,11 @@ allowing 180 days between exposures, adding 0 days after exposure ends, and usin
 <li>drug exposures of ‘[SOS] ranibizumab’.</li>
 </ol>
 </div>
-<div id="cohort-eras-2" class="section level3" number="16.3.4">
+<div id="cohort-eras-2" class="section level3" number="15.3.4">
 <h3><span class="header-section-number">A.3.4</span> Cohort Eras</h3>
 <p>Entry events will be combined into cohort eras if they are within 0 days of each other.</p>
 </div>
-<div id="concept-sos-aflibercept-2" class="section level3" number="16.3.5">
+<div id="concept-sos-aflibercept-2" class="section level3" number="15.3.5">
 <h3><span class="header-section-number">A.3.5</span> Concept: [SOS] aflibercept</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5034,7 +5007,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-age-related-macular-degeneration-2" class="section level3" number="16.3.6">
+<div id="concept-sos-age-related-macular-degeneration-2" class="section level3" number="15.3.6">
 <h3><span class="header-section-number">A.3.6</span> Concept: [SOS] Age related Macular Degeneration</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5112,7 +5085,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-diabetic-retinopathy-2" class="section level3" number="16.3.7">
+<div id="concept-sos-diabetic-retinopathy-2" class="section level3" number="15.3.7">
 <h3><span class="header-section-number">A.3.7</span> Concept: [SOS] Diabetic retinopathy</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5167,7 +5140,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-macular-edema-2" class="section level3" number="16.3.8">
+<div id="concept-sos-macular-edema-2" class="section level3" number="15.3.8">
 <h3><span class="header-section-number">A.3.8</span> Concept: [SOS] Macular edema</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5245,7 +5218,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-retinal-vein-occlusion-2" class="section level3" number="16.3.9">
+<div id="concept-sos-retinal-vein-occlusion-2" class="section level3" number="15.3.9">
 <h3><span class="header-section-number">A.3.9</span> Concept: [SOS] Retinal Vein Occlusion</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5369,7 +5342,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-aflibercept-ranibizumab-and-bevacizumab-2" class="section level3" number="16.3.10">
+<div id="concept-sos-aflibercept-ranibizumab-and-bevacizumab-2" class="section level3" number="15.3.10">
 <h3><span class="header-section-number">A.3.10</span> Concept: [SOS] aflibercept ranibizumab and bevacizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5470,7 +5443,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-malignant-neoplasms-excluding-non-melanoma-skin-cancer-2" class="section level3" number="16.3.11">
+<div id="concept-sos-malignant-neoplasms-excluding-non-melanoma-skin-cancer-2" class="section level3" number="15.3.11">
 <h3><span class="header-section-number">A.3.11</span> Concept: [SOS] Malignant neoplasms excluding non-melanoma skin cancer</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5571,7 +5544,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-bevacizumab-2" class="section level3" number="16.3.12">
+<div id="concept-sos-bevacizumab-2" class="section level3" number="15.3.12">
 <h3><span class="header-section-number">A.3.12</span> Concept: [SOS] bevacizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5626,7 +5599,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-ranibizumab-2" class="section level3" number="16.3.13">
+<div id="concept-sos-ranibizumab-2" class="section level3" number="15.3.13">
 <h3><span class="header-section-number">A.3.13</span> Concept: [SOS] ranibizumab</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -5685,11 +5658,11 @@ NO
 </div>
 </div>
 </div>
-<div id="outcome-cohort-definitions" class="section level1" number="17">
+<div id="outcome-cohort-definitions" class="section level1" number="16">
 <h1><span class="header-section-number">B</span> Outcome Cohort Definitions</h1>
-<div id="esrd-simple" class="section level2" number="17.1">
+<div id="esrd-simple" class="section level2" number="16.1">
 <h2><span class="header-section-number">B.1</span> ESRD Simple</h2>
-<div id="cohort-entry-events-3" class="section level3" number="17.1.1">
+<div id="cohort-entry-events-3" class="section level3" number="16.1.1">
 <h3><span class="header-section-number">B.1.1</span> Cohort Entry Events</h3>
 <p>People enter the cohort when observing any of the following:</p>
 <ol style="list-style-type: decimal">
@@ -5699,15 +5672,15 @@ NO
 </ol>
 <p>Limit cohort entry events to the earliest event per person.</p>
 </div>
-<div id="cohort-exit-3" class="section level3" number="17.1.2">
+<div id="cohort-exit-3" class="section level3" number="16.1.2">
 <h3><span class="header-section-number">B.1.2</span> Cohort Exit</h3>
 <p>The person also exists the cohort at the end of continuous observation.</p>
 </div>
-<div id="cohort-eras-3" class="section level3" number="17.1.3">
+<div id="cohort-eras-3" class="section level3" number="16.1.3">
 <h3><span class="header-section-number">B.1.3</span> Cohort Eras</h3>
 <p>Entry events will be combined into cohort eras if they are within 0 days of each other.</p>
 </div>
-<div id="concept-sos-renal-transplant-ref" class="section level3" number="17.1.4">
+<div id="concept-sos-renal-transplant-ref" class="section level3" number="16.1.4">
 <h3><span class="header-section-number">B.1.4</span> Concept: [SOS] Renal transplant Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -6130,7 +6103,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-dialysis-ref" class="section level3" number="17.1.5">
+<div id="concept-sos-dialysis-ref" class="section level3" number="16.1.5">
 <h3><span class="header-section-number">B.1.5</span> Concept: [SOS] Dialysis Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -6553,7 +6526,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-esrd-ref" class="section level3" number="17.1.6">
+<div id="concept-sos-esrd-ref" class="section level3" number="16.1.6">
 <h3><span class="header-section-number">B.1.6</span> Concept: [SOS] ESRD Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -7367,7 +7340,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-egfr-ref" class="section level3" number="17.1.7">
+<div id="concept-sos-egfr-ref" class="section level3" number="16.1.7">
 <h3><span class="header-section-number">B.1.7</span> Concept: [SOS] eGFR Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -7770,9 +7743,9 @@ NO|YES|NO
 </hr>
 </div>
 </div>
-<div id="esrd-complex" class="section level2" number="17.2">
+<div id="esrd-complex" class="section level2" number="16.2">
 <h2><span class="header-section-number">B.2</span> ESRD Complex</h2>
-<div id="cohort-entry-events-4" class="section level3" number="17.2.1">
+<div id="cohort-entry-events-4" class="section level3" number="16.2.1">
 <h3><span class="header-section-number">B.2.1</span> Cohort Entry Events</h3>
 <p>People enter the cohort when observing any of the following:</p>
 <ol style="list-style-type: decimal">
@@ -7792,15 +7765,15 @@ NO|YES|NO
 </ol>
 <p>Limit cohort entry events to the earliest event per person.</p>
 </div>
-<div id="cohort-exit-4" class="section level3" number="17.2.2">
+<div id="cohort-exit-4" class="section level3" number="16.2.2">
 <h3><span class="header-section-number">B.2.2</span> Cohort Exit</h3>
 <p>The person also exists the cohort at the end of continuous observation.</p>
 </div>
-<div id="cohort-eras-4" class="section level3" number="17.2.3">
+<div id="cohort-eras-4" class="section level3" number="16.2.3">
 <h3><span class="header-section-number">B.2.3</span> Cohort Eras</h3>
 <p>Entry events will be combined into cohort eras if they are within 0 days of each other.</p>
 </div>
-<div id="concept-sos-renal-transplant-ref-1" class="section level3" number="17.2.4">
+<div id="concept-sos-renal-transplant-ref-1" class="section level3" number="16.2.4">
 <h3><span class="header-section-number">B.2.4</span> Concept: [SOS] Renal transplant Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -8223,7 +8196,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-dialysis-ref-1" class="section level3" number="17.2.5">
+<div id="concept-sos-dialysis-ref-1" class="section level3" number="16.2.5">
 <h3><span class="header-section-number">B.2.5</span> Concept: [SOS] Dialysis Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -8646,7 +8619,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-esrd-ref-1" class="section level3" number="17.2.6">
+<div id="concept-sos-esrd-ref-1" class="section level3" number="16.2.6">
 <h3><span class="header-section-number">B.2.6</span> Concept: [SOS] ESRD Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -9460,7 +9433,7 @@ NO
 </tbody>
 </table>
 </div>
-<div id="concept-sos-egfr-ref-1" class="section level3" number="17.2.7">
+<div id="concept-sos-egfr-ref-1" class="section level3" number="16.2.7">
 <h3><span class="header-section-number">B.2.7</span> Concept: [SOS] eGFR Ref</h3>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -9864,7 +9837,7 @@ NO|YES|NO
 </div>
 </div>
 </div>
-<div id="negative-controls" class="section level1" number="18">
+<div id="negative-controls" class="section level1" number="17">
 <h1><span class="header-section-number">C</span> Negative Control Concepts</h1>
 </div>
 
