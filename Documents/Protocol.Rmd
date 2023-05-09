@@ -51,8 +51,8 @@ longtable: yes
 mainfont: Arial
 bibliography: Protocol.bib
 params:
-  date: '28-Mar-2023'
-  version: 0.0.1
+  date: '09-May-2023'
+  version: 0.0.2
 subtitle: 'Version: `r params$version`'
 link-citations: yes
 csl: bmj.csl
