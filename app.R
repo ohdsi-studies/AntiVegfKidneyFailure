@@ -115,18 +115,37 @@ predictionModule <- createDefaultPredictionConfig(
 )
 
 # Specify evidence synthesis module --------------------------------------------
-resultDatabaseDetails <- list(
-  dbms = resultsDatabaseConnectionDetails$dbms,
-  tablePrefix = 'es_',
-  cohortTablePrefix = 'cg_',
-  databaseTablePrefix = '',
-  schema = resultsDatabaseSchema,
-  databaseTable = 'DATABASE_META_DATA'
-)
-metaModule <- ShinyAppBuilder::createDefaultMetaConfig(
-  resultDatabaseDetails = resultDatabaseDetails,
-  useKeyring = FALSE
-)
+# resultDatabaseDetails <- list(
+#   dbms = resultsDatabaseConnectionDetails$dbms,
+#   tablePrefix = 'es_',
+#   cohortTablePrefix = 'cg_',
+#   databaseTablePrefix = '',
+#   schema = resultsDatabaseSchema,
+#   databaseTable = 'DATABASE_META_DATA'
+# )
+# metaModule <- ShinyAppBuilder::createDefaultMetaConfig(
+#   resultDatabaseDetails = resultDatabaseDetails,
+#   useKeyring = FALSE
+# )
+metaModule <- ShinyAppBuilder::createModuleConfig( 
+     moduleIcon = "object-group",#"meta",
+     moduleId = 'EvidenceSynthesis',
+     tabName = 'Meta',
+     shinyModulePackage = "OhdsiShinyModules",
+     moduleUiFunction = "evidenceSynthesisViewer",
+     moduleServerFunction = "evidenceSynthesisServer",
+     moduleDatabaseConnectionKeyUsername = 'es',
+     moduleInfoBoxFile = "evidenceSynthesisHelperFile()",
+     resultDatabaseDetails = list(
+       tablePrefix = 'es_',
+       cmTablePrefix = 'cm_',
+       cgTablePrefix = 'cg_',
+       sccsTablePrefix = 'sccs_',
+       schema = resultsDatabaseSchema,
+       databaseMetaData = 'DATABASE_META_DATA'
+     ),
+     useKeyring = F
+   )
 
 # Combine module specifications ------------------------------------------------
 shinyAppConfig <- initializeModuleConfig() %>%
