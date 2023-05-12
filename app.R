@@ -114,6 +114,20 @@ predictionModule <- createDefaultPredictionConfig(
   useKeyring = FALSE
 )
 
+# Specify evidence synthesis module --------------------------------------------
+resultDatabaseDetails <- list(
+  dbms = resultsDatabaseConnectionDetails$dbms,
+  tablePrefix = 'es_',
+  cohortTablePrefix = 'cg_',
+  databaseTablePrefix = '',
+  schema = resultsDatabaseSchema,
+  databaseTable = 'DATABASE_META_DATA'
+)
+metaModule <- ShinyAppBuilder::createDefaultMetaConfig(
+  resultDatabaseDetails = resultDatabaseDetails,
+  useKeyring = FALSE
+)
+
 # Combine module specifications ------------------------------------------------
 shinyAppConfig <- initializeModuleConfig() %>%
   addModuleConfig(aboutModule) %>%
@@ -122,7 +136,8 @@ shinyAppConfig <- initializeModuleConfig() %>%
   addModuleConfig(characterizationModule) %>%
   addModuleConfig(cohortMethodModule) %>%
   addModuleConfig(sccsModule) %>%
-  addModuleConfig(predictionModule)
+  addModuleConfig(predictionModule) %>%
+  addModuleConfig(metaModule)
 
 # Launch shiny app -----------------------------------------------------
 connectionHandler <- ResultModelManager::ConnectionHandler$new(resultsDatabaseConnectionDetails)
