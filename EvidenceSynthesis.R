@@ -64,16 +64,22 @@ connection <- DatabaseConnector::connect(resultsDatabaseConnectionDetails)
 # dir.create(backupFolder)
 # tables <- DatabaseConnector::getTableNames(connection, resultsDatabaseSchema)
 # for (table in tables) {
-#   message(sprintf("Backing up table '%s.%s'", resultsDatabaseSchema, table)) 
-#   data <- DatabaseConnector::dbReadTable(connection, table, databaseSchema = resultsDatabaseSchema) 
+#   message(sprintf("Backing up table '%s.%s'", resultsDatabaseSchema, table))
+#   data <- DatabaseConnector::dbReadTable(connection, table, databaseSchema = resultsDatabaseSchema)
 #   saveRDS(data, file.path(backupFolder, sprintf("%s.rds", table)))
 # }
+
 
 # Create tables
 resultsFolder <- file.path(outputLocation, "results", "EvidenceSynthesisModule_1")
 rdmsFile <- file.path(resultsFolder, "resultsDataModelSpecification.csv")
 specification <- readr::read_csv(file = rdmsFile, show_col_types = FALSE) %>%
   SqlRender::snakeCaseToCamelCaseNames()
+if (DatabaseConnector::existsTable(connection, resultsDatabaseSchema, specification$tableName[1])) {
+  # Tables already exist. Delete first. See https://github.com/OHDSI/ResultModelManager/issues/30
+  sql <- paste(sprintf("DROP TABLE %s.%s;", resultsDatabaseSchema, unique(specification$tableName)), collapse = "\n")
+  DatabaseConnector::executeSql(connection, sql) 
+}
 sql <- ResultModelManager::generateSqlSchema(csvFilepath = rdmsFile)
 sql <- SqlRender::render(
   sql = sql,
