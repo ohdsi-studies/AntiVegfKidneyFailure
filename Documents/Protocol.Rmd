@@ -290,7 +290,7 @@ Time to the outcome of kidney failure will be calculated for each exposure cohor
 
 ## B) Patient-Level Prediction
 
-The PatientLevelPrediction and Cyclops packages in HADES will be used to construct logistic regression models with LASSO regularization to predict the risk of kidney failure ??? months to ??? months after the initial 3 monthly intravitreal anti-VEGF medications.​34​ The model will be developed on 75% of the data and internally validated on the remaining 25%.
+The PatientLevelPrediction and Cyclops packages in HADES will be used to construct logistic regression models with LASSO regularization to predict the risk of kidney failure 6 months to 2 years after the initial 3 monthly intravitreal anti-VEGF medications.​34​ The model will be developed on 75% of the data and internally validated on the remaining 25%.
 
 ## C) Population-Level Effect Estimation
 
@@ -438,3 +438,28 @@ printCohortDefinitionFromNameAndJson(name = "ESRD Complex",
 ```
 
 # Negative Control Concepts {#negative-controls}
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Provide the correct path to the "negative_control.csv" file in your local directory
+csv_path <- "cohortDefinitions/negative_control.csv"
+
+negative_controls <- readr::read_csv(csv_path) %>%
+  select(name, conceptId) %>% arrange(name)
+
+colnames(negative_controls) <- c("", "Concept ID")
+
+tab <- kable(negative_controls, booktabs = TRUE, linesep = "", longtable = TRUE,
+      caption = "Negative outcome controls specified through condition occurrences that map to (a descendent of) the indicated concept ID") %>%
+  kable_styling(bootstrap_options = "striped", latex_options = "striped")
+
+if (knitr::is_latex_output()) {
+  tab %>%
+    column_spec(1, width = "40em") %>%
+    column_spec(2, width = "15em") %>%
+    kable_styling(font_size = latex_table_font_size,
+                  latex_options = c("repeat_header"),
+                  repeat_header_continued = "\\textit{(Continued on Next Page...)}")  
+} else {
+  tab
+}
+```
