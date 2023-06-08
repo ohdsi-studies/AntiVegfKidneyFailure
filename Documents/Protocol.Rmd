@@ -421,6 +421,10 @@ printCohortDefinitionFromNameAndJson(name = "Bevacizumab exposures after new use
 printCohortDefinitionFromNameAndJson(name = "Aflibercept exposures after new use with 3 exposures in 21-70d windows",
                                      json = SqlRender::readSql("cohortDefinitions/aflibercept_exposure.json"),
                                      withConcepts = TRUE)
+
+printCohortDefinitionFromNameAndJson(name = "Persons with blinding diseases (DR, AMD, ME, RVO)",
+                                     json = SqlRender::readSql("cohortDefinitions/blinding_disease.json"),
+                                     withConcepts = TRUE)
 ```
 
 # Outcome Cohort Definitions
