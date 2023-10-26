@@ -5,7 +5,7 @@ Risk of kidney failure associated with intravitreal anti-vascular endothelial gr
 
 - Analytics use case(s): **-**
 - Study type: **Population-level estimation**
-- Tags: **-**
+- Tags: 
 - Study lead: **Cindy X. Cai**
 - Study lead forums tag: **-**
 - Study start date: **28-03-2023**
