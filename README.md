@@ -12,7 +12,7 @@ Risk of kidney failure associated with intravitreal anti-vascular endothelial gr
 - Study end date: **-**
 - Protocol: https://ohdsi-studies.github.io/AntiVegfKidneyFailure/Protocol.html
 - Publications: **-**
-- Results explorer: **[-](https://data.ohdsi.org/AntiVegfKidneyFailure/)**
+- Results explorer: https://data.ohdsi.org/AntiVegfKidneyFailure/; https://data.ohdsi.org/AntiVegfKidneyFailure2/
 
 [Description (single paragraph)]
 
