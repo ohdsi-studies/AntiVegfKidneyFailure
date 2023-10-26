@@ -308,6 +308,14 @@ The SelfControlledCaseSeries and Cyclops packages in Hades will be used to estim
 3.	Negative control calibration plots to assess residual bias 
 4.	Kaplan-Meier plots to examine hazard ratio proportionality assumptions 
 
+Study diagnostics to evaluate each databases’ fitness for use to estimate comparative risk of kidney failure between exposure groups.
+
+Study Diagnostic; Brief Description; Threshold
+Minimum detectable relative risk (MDRR); Evaluates the effect size that the analysis would be able to detect given the available data; <10
+Empirical Equipoise; Estimated using preference score, a transformation of propensity score; >0.20
+Attrition Fraction; Fraction of the initial cohort that remains in the analytic cohort after propensity score matching and is a measure of generalizability; ≤1
+Covariate Balance; Covariate balance of baseline characteristics between target and comparator groups was measured using the standardized mean difference; <0.10
+Expected absolute systematic error (EASE); Calculated using a set of negative control outcomes to assess residual bias; <0.25
 
 # Strengths and Limitations {#strengths-limitations}
 When executed, this will be the largest study examining the association between intravitreal anti-VEGF medications and kidney failure. Other strengths of this study include the diversity of the sample (from multiple institutions, multiple countries, and a range of underlying kidney impairment at baseline). 
